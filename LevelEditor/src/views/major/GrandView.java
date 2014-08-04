@@ -11,6 +11,7 @@ package views.major;
 import views.View;
 import core.InputController;
 import core.ProgramThread;
+import data.GlobalSettings;
 import io.WorldReader;
 import io.WorldWriter;
 import entities.SavedEntityState;
@@ -20,7 +21,6 @@ public class GrandView extends View{
     private ProgramThread thread;
     private InputController inputs;
     private ArrayList<SavedEntityState> configs;
-    // Actual Classes
     private LevelView level;
     private AreaView areas;
     private EntityStateView entityState;
@@ -29,6 +29,7 @@ public class GrandView extends View{
     private SavedEntityStateView savedStates;
     private ModifiersView modifiers;
     private OptionView options;
+    private GlobalSettings settings;
     private WorldReader reader;
     private WorldWriter writer;
     
@@ -42,6 +43,7 @@ public class GrandView extends View{
         setWidth(800);
         setHeight(800);
         inputs=new InputController();
+        settings=new GlobalSettings();
         reader=new WorldReader(this);
         writer=new WorldWriter(this);
         initializeViews(); // initializes subviews
@@ -100,24 +102,18 @@ public class GrandView extends View{
     }
     
     // handles the clicks from the user
-    public void clicked(){
+    @Override public void clicked(){
         System.out.println("Grand View was clicked");
         // impleemnt
     }
     
     // handles the types from the user
-    public void types(char c){
+    @Override public void types(char c){
         // implement
     }
 
-    // custom selection handling
-    public void customFalsify(){
-        // implement
-    }
-    
-    public void paint(Graphics g){
+    @Override public void paint(Graphics g){
         super.paint(g);
-        // implement
     }
     
     // getter methods
@@ -132,6 +128,7 @@ public class GrandView extends View{
     public SavedEntityStateView getSavedStates(){return savedStates;}
     public ModifiersView getModifiers(){return modifiers;}
     public OptionView getOptions(){return options;}
+    public GlobalSettings getSettings(){return settings;}
     public WorldReader getReader(){return reader;}
     public WorldWriter getWriter(){return writer;}
     
@@ -147,6 +144,7 @@ public class GrandView extends View{
     public void setSavedStates(SavedEntityStateView param){savedStates=param;}
     public void setModifiers(ModifiersView param){modifiers=param;}
     public void setOptions(OptionView param){options=param;}
+    public void setSettings(GlobalSettings param){settings=param;}
     public void setWorldReader(WorldReader param){reader=param;}
     public void setWorldWriter(WorldWriter param){writer=param;}
 }

@@ -155,6 +155,14 @@ public abstract class View extends Displayable{
             if(subviews.get(i)instanceof ColorInput)
                 subviews.get(i).setSelected(false);
     }
+    
+    // finds the grand view by searching up the view hierarchy
+    public GrandView findGrandView(){
+        View view=superview;
+        while(!(view instanceof GrandView))
+            view=view.getSuperview();
+        return (GrandView)view;
+    }
 
     // adds a single button to this view with the parameters
     public Button makeButton(int cnt,int x,int y,View sup,String title){

@@ -20,6 +20,8 @@ public class GlobalSettings {
         tileSize=size;
         grid=true;
         tiled=true;
+        if(size==0)
+            turnOffTiled();
     }
     
     public void turnOffTiled(){

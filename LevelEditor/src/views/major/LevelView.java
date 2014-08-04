@@ -8,6 +8,7 @@ package views.major;
 import views.View;
 import entities.GameEntity;
 import data.ManualGraphics;
+import data.GlobalSettings;
 import java.awt.Color;
 import java.util.ArrayList;
 import java.awt.Graphics;
@@ -16,6 +17,7 @@ public class LevelView extends View{
     // this class will contain all of the entities
     private ArrayList<GameEntity> entities;
     private ManualGraphics mans;
+    private GlobalSettings settings;
     private int levelX; // the xposition of the view with respect to the level
     private int levelY; // the yposition of the view with respect to the level
     private int levelWidth;
@@ -53,14 +55,11 @@ public class LevelView extends View{
     
     // refactors the locations of the objects when the view is shifted
     public void refactorLocations(int x,int y){
-        System.out.println("RAN :: LevelView");
-        System.out.println(getSubviews().size()+" :: LevelView");
         for(int i=0;i<getSubviews().size();i++)
             if(getSubviews().get(i)instanceof GameEntity||true){
                 View temp=getSubviews().get(i);
                 temp.setXpos(temp.getXpos()+x);
                 temp.setYpos(temp.getYpos()+y);
-                System.out.println("TEST 1 :: LevelView");
             }
     }
 
@@ -75,14 +74,19 @@ public class LevelView extends View{
     
     // draws the view and the subviews to the screen
     public void paint(Graphics g){
+        //g.setColor(Color.black);
+        //if(settings.getTiled()){
+            //for(int i=0;i<getWidth();i++)
+            //    if(i%settings.getTileSize()==0)
+            //        g.drawLine(i,0,i,getHeight());
+            //for(int i=0;i<getHeight();i++)
+            //    if(i*settings.getTileSize()==0)
+            //        g.drawLine(0,i,getWidth(),i);
+        //}
         g.setColor(Color.red);
         g.fillRect(getXpos(), getYpos(), getWidth(), getHeight());
         if(!sorted)
             sortByDepth();
-        //Rectangle one=getLevelRect();
-        //for(int i=0;i<entities.size();i++){
-        //    entities.get(i).levelPaint(g,this);
-        //}
         super.paint(g);
     }
     
@@ -117,6 +121,7 @@ public class LevelView extends View{
     // getter methods
     public ArrayList<GameEntity> getEntities(){return entities;}
     public ManualGraphics getManGraphics(){return mans;}
+    public GlobalSettings getSettings(){return settings;}
     public int getLevelX(){return levelX;}
     public int getLevelY(){return levelY;}
     public int getLevelWidth(){return levelWidth;}
@@ -126,6 +131,7 @@ public class LevelView extends View{
     // setter methods
     public void setEntities(ArrayList<GameEntity> param){entities=param;}
     public void setManGraphics(ManualGraphics param){mans=param;}
+    public void setSettings(GlobalSettings param){settings=param;}
     public void setLevelX(int param){levelX=param;}
     public void setLevelY(int param){levelY=param;}
     public void setLevelWidth(int param){levelWidth=param;}

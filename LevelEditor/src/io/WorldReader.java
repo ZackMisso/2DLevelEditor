@@ -6,6 +6,7 @@
  */
 package io;
 import views.major.GrandView;
+import data.GlobalSettings;
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.awt.Image;
@@ -86,4 +87,10 @@ public class WorldReader{
             names.add(str);
         return names;
     }*/
+    
+    // reads the past global settings from a file
+    public GlobalSettings readSettings(){
+        // implement
+        return new GlobalSettings();
+    }
 }
