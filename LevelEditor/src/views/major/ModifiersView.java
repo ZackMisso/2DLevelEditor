@@ -29,96 +29,16 @@ public class ModifiersView extends View{
         int temp=0;
         int x=-55;
         int y=getYpos()+6;
-        // initializes the save level button
-        Button tempButton=new Button();
-        tempButton.setIndex(temp++);
-        tempButton.setXpos(x+=60);
-        tempButton.setYpos(y);
-        tempButton.setTitle("S LEV");
-        tempButton.setSuperview(this);
-        // add image data
-        getSubviews().add(tempButton);
-        // initializes the open level button
-        tempButton=new Button();
-        tempButton.setIndex(temp++);
-        tempButton.setXpos(x+=60);
-        tempButton.setYpos(y);
-        tempButton.setTitle("O LEV");
-        tempButton.setSuperview(this);
-        // add image data
-        getSubviews().add(tempButton);
-        // initializes the shift right button
-        tempButton=new Button();
-        tempButton.setIndex(temp++);
-        tempButton.setXpos(x+=60);
-        tempButton.setYpos(y);
-        tempButton.setTitle("->");
-        tempButton.setSuperview(this);
-        // add image data
-        getSubviews().add(tempButton);
-        // initializes the shift left button
-        tempButton=new Button();
-        tempButton.setIndex(temp++);
-        tempButton.setXpos(x+=60);
-        tempButton.setYpos(y);
-        tempButton.setTitle("<-");
-        tempButton.setSuperview(this);
-        // add image data
-        getSubviews().add(tempButton);
-        // initializes the create game object button
-        tempButton=new Button();
-        tempButton.setIndex(temp++);
-        tempButton.setXpos(x+=60);
-        tempButton.setYpos(y);
-        tempButton.setTitle("CGO");
-        tempButton.setSuperview(this);
-        // add image data
-        getSubviews().add(tempButton);
-        // initializes the create entity button
-        tempButton=new Button();
-        tempButton.setIndex(temp++);
-        tempButton.setXpos(x+=60);
-        tempButton.setYpos(y);
-        tempButton.setTitle("CE");
-        tempButton.setSuperview(this);
-        // add image data
-        getSubviews().add(tempButton);
-        // initializes the delete game object button
-        tempButton=new Button();
-        tempButton.setIndex(temp++);
-        tempButton.setXpos(x+=60);
-        tempButton.setYpos(y);
-        tempButton.setTitle("DGO");
-        tempButton.setSuperview(this);
-        // add image data
-        getSubviews().add(tempButton);
-        // initializes the delete entity button
-        tempButton=new Button();
-        tempButton.setIndex(temp++);
-        tempButton.setXpos(x+=60);
-        tempButton.setYpos(y);
-        tempButton.setTitle("DE");
-        tempButton.setSuperview(this);
-        // add image data
-        getSubviews().add(tempButton);
-        // initializes the shift up button
-        tempButton=new Button();
-        tempButton.setIndex(temp++);
-        tempButton.setXpos(x+=60);
-        tempButton.setYpos(y);
-        tempButton.setTitle(" ^");
-        tempButton.setSuperview(this);
-        // add image data
-        getSubviews().add(tempButton);
-        // initializes the shift down button
-        tempButton=new Button();
-        tempButton.setIndex(temp++);
-        tempButton.setXpos(x+=60);
-        tempButton.setYpos(y);
-        tempButton.setTitle(" v");
-        tempButton.setSuperview(this);
-        // add image data
-        getSubviews().add(tempButton);
+        makeButton(temp++,x+=60,y,this,"S LEV");
+        makeButton(temp++,x+=60,y,this,"SETT");
+        makeButton(temp++,x+=60,y,this,"->");
+        makeButton(temp++,x+=60,y,this,"<-");
+        makeButton(temp++,x+=60,y,this,"CGO");
+        makeButton(temp++,x+=60,y,this,"CE");
+        makeButton(temp++,x+=60,y,this,"DGO");
+        makeButton(temp++,x+=60,y,this,"DE");
+        makeButton(temp++,x+=60,y,this," ^");
+        makeButton(temp++,x+=60,y,this," v");
     }
     
     // handles user clicks
@@ -137,7 +57,7 @@ public class ModifiersView extends View{
                 saveLevel(0);
                 break;
             case 1:
-                openLevel(1);
+                changeSettings(1);
                 break;
             case 2:
                 shiftRight(2);
@@ -186,9 +106,12 @@ public class ModifiersView extends View{
     }
     
     // what happens when the open level button is pressed
-    public void openLevel(int btnval){
-        System.out.println("Open Level Button pressed");
-        // implement
+    public void changeSettings(int btnval){
+        System.out.println("Change Settings Button pressed");
+        GrandView grand=findGrandView();
+        grand.getOptions().clearBools();
+        grand.getOptions().setGlobalSettings(true);
+        grand.getOptions().checkInitialization();
         for(int i=0;i<getSubviews().size();i++)
             if(getSubviews().get(i)instanceof Button){
                 Button temp=(Button)getSubviews().get(i);
@@ -230,7 +153,7 @@ public class ModifiersView extends View{
     // what happens when the create game object button is pressed
     public void createGameObject(int btnval){
         System.out.println("Create Game Object Button pressed");
-        GrandView grand=(GrandView)getSuperview();
+        GrandView grand=findGrandView();
         SavedEntityState state=grand.getSavedStates().getSelectedState();
         if(state!=null){
             GameEntity entity=new GameEntity();
@@ -269,7 +192,7 @@ public class ModifiersView extends View{
     // what happens when the delete game object button is pressed
     public void deleteGameObject(int btnval){
         System.out.println("Delete Game Object Button pressed");
-        GrandView grand=(GrandView)getSuperview();
+        GrandView grand=findGrandView();
         LevelView level=grand.getLevel();
         GameEntity selected=level.getSelectedEntity();
         if(selected!=null){
@@ -299,7 +222,7 @@ public class ModifiersView extends View{
     // what happens when the shift up button is pressed
     public void shiftUp(int btnval){
         System.out.println("Shift Up Button pressed");
-        GrandView grand=(GrandView)getSuperview();
+        GrandView grand=findGrandView();
         LevelView level=grand.getLevel();
         level.setLevelY(level.getLevelY()+40);
         level.refactorLocations(0,40);
@@ -328,7 +251,6 @@ public class ModifiersView extends View{
     
     // paints the background for this view
     public void paint(Graphics g){
-        //super.paint(g);
         g.setColor(Color.blue);
         g.fillRect(getXpos(),getYpos(),getWidth(),getHeight());
         super.paint(g);

@@ -10,23 +10,23 @@ import views.MajorView;
 import views.TemporaryView;
 import views.minor.TextBox;
 import views.minor.RadialButton;
-import views.minor.SelectableLabel;
-import views.minor.Label;
+//import views.minor.SelectableLabel;
+//import views.minor.Label;
 import views.temporaries.AddEntityStateView;
 import views.temporaries.AddEntityStateObjectView;
 import views.temporaries.GlobalSettingsView;
 import views.temporaries.RemoveEntityStateView;
 import views.temporaries.RemoveEntityStateObjectView;
-import entities.SavedEntityState;
-import java.util.ArrayList;
+//import entities.SavedEntityState;
+//import java.util.ArrayList;
 import java.awt.Graphics;
 import java.awt.Color;
 public class OptionView extends MajorView{
-    private View container; // what this view is containing
+    //private View container; // what this view is containing
     private TemporaryView temporary;
-    private ArrayList<View> temporaries;
+    //private ArrayList<View> temporaries;
     private Object referenceObject; // will depend on the type of view
-    private TextBox askName; // allows the user to input a name for something
+    //private TextBox askName; // allows the user to input a name for something
     private int radialCols;
     private boolean addEntityStateObj;
     private boolean removeEntityStateObj;
@@ -37,11 +37,11 @@ public class OptionView extends MajorView{
     // default constructor
     public OptionView(){
         super();
-        container=null;
+        //container=null;
         temporary=null;
-        temporaries=new ArrayList<>();
+        //temporaries=new ArrayList<>();
         referenceObject=null;
-        askName=null;
+        //askName=null;
         addEntityStateObj=false;
         removeEntityStateObj=false;
         addEntityState=false;
@@ -62,34 +62,20 @@ public class OptionView extends MajorView{
     
     // checks and initializes the view based on what the option view should display
     public void checkInitialization(){
-        if(addEntityStateObj){
+        if(addEntityStateObj)
             temporary=new AddEntityStateObjectView();
-            temporary.setReference(this);
-            temporary.initializeView();
-        }
-        if(removeEntityStateObj){
+        if(removeEntityStateObj)
             temporary=new RemoveEntityStateObjectView();
-            temporary.setReference(this);
-            temporary.initializeView();
-        }
-        if(addEntityState){
+        if(addEntityState)
             temporary=new AddEntityStateView();
-            temporary.setReference(this);
-            temporary.initializeView();
-        }
-        if(removeEntityState){
-            //initializeRemoveEntityState();
+        if(removeEntityState)
             temporary=new RemoveEntityStateView();
-            temporary.setReference(this);
-            temporary.initializeView();
-        }
-        if(globalSettings){
+        if(globalSettings)
             temporary=new GlobalSettingsView();
+        if(temporary!=null){
             temporary.setReference(this);
             temporary.initializeView();
         }
-        
-        // implement the rest as they are needed
     }
     
     @Override
@@ -116,7 +102,6 @@ public class OptionView extends MajorView{
     
     // checks and does the rejecting functionality for the current view
     private void rejectCurrentView(int btnval){
-        //if(addEntityState||addEntityStateObj)
         temporary.clearView();
         getReject().setSelected(false);
         referenceObject=false;
@@ -126,22 +111,15 @@ public class OptionView extends MajorView{
     
     // clears the current view to make the initialization for the new one smoother
     public void clearCurrentView(){
-        //referenceObject=null; // This causes an error
-        for(int i=0;i<temporaries.size();i++){
-            getSubviews().remove(temporaries.get(i));
-            temporaries.remove(i--);
-        }
         for(int i=0;i<getScrollables().size();i++){
             getSubviews().remove(getScrollables().get(i));
             getScrollables().remove(i--);
         }
-        //scrollables.clear();
         for(int i=0;i<getSubviews().size();i++){
             if(getSubviews().get(i)instanceof TextBox)
                 getSubviews().remove(i--);
             // implement more if needed
         }
-        askName=null;
     }
     
     // sets all of the view based booleans to false
@@ -150,6 +128,7 @@ public class OptionView extends MajorView{
         removeEntityState=false;
         addEntityState=false;
         removeEntityState=false;
+        globalSettings=false;
         // implement more as they are added
     }
     
@@ -223,11 +202,8 @@ public class OptionView extends MajorView{
     }
     
     // getter methods
-    public View getContainer(){return container;}
     public TemporaryView getTemporary(){return temporary;}
-    public ArrayList<View> getTemporaries(){return temporaries;}
     public Object getReferenceObject(){return referenceObject;}
-    public TextBox getAskName(){return askName;}
     public int getRadialCols(){return radialCols;}
     public boolean getAddEntityStateObj(){return addEntityStateObj;}
     public boolean getRemoveEntityStateObj(){return removeEntityStateObj;}
@@ -236,11 +212,8 @@ public class OptionView extends MajorView{
     public boolean getGlobalSettings(){return globalSettings;}
     
     // setter methods
-    public void setContainer(View param){container=param;}
     public void setTemporary(TemporaryView param){temporary=param;}
-    public void setTemporaries(ArrayList<View> param){temporaries=param;}
     public void setReferenceObject(Object param){referenceObject=param;}
-    public void setAskName(TextBox param){askName=param;}
     public void setRadialCols(int param){radialCols=param;}
     public void setAddEntityStateObj(boolean param){addEntityStateObj=param;}
     public void setRemoveEntityStateObj(boolean param){removeEntityStateObj=param;}

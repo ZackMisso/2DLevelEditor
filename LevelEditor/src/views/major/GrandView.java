@@ -57,6 +57,7 @@ public class GrandView extends View{
         System.out.println("Initializing the Level View");
         level=new LevelView();
         level.setSuperview(this);
+        level.setSettings(settings);
         getSubviews().add(level);
         // initialize AreaView
         System.out.println("Initializing the Area View");

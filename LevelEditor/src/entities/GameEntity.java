@@ -27,7 +27,6 @@ public class GameEntity extends View{
         super();
         state=new EntityState();
         color=null;
-        //state=null; // STUPID!!!
         image=null;
         startX=-100;
         startY=-100;
@@ -60,9 +59,7 @@ public class GameEntity extends View{
             image=view.getManGraphics().getMatch(state.getReference().getName());
             if(image!=null)
                 System.out.println("Image Found :: GameEntity");
-            //System.out.println("There is no graphics :: GameEntity");
         }
-        //System.out.println("Change Test :: GameEntity");
     }
 
     // sets the pre set instance variaples
@@ -88,28 +85,19 @@ public class GameEntity extends View{
 
     // calculates the object's x position for the actual screen
     private int calculateX(LevelView view){
-        // this may not be needed
         return startX-view.getLevelX();
     }
 
     // calculates the object's y position for the actual screen
     private int calculateY(LevelView view){
-        // this may not be needed
         return startY-view.getLevelY();
     }
     
     // This is depreciated
     public void levelPaint(Graphics g,LevelView view){
-        //Rectangle one=view.getLevelRect();
         Rectangle one=view.getRect();
         Rectangle two=getRect();
-        //System.out.println(getXpos());
-        //System.out.println(one.x+" "+one.width);
-        //System.out.println(one.y+" "+one.height);
-        //System.out.println(two.x+" "+two.width);
-        //System.out.println(two.y+" "+two.height);
         if(one.intersects(two)){
-            //System.out.println("IN VIEW :: GameEntity");
             if(image==null&&color==null)
                 checkForGraphics(view);
             setXpos(calculateX(view));

@@ -12,7 +12,6 @@ import data.GlobalSettings;
 import java.awt.Color;
 import java.util.ArrayList;
 import java.awt.Graphics;
-import java.awt.Rectangle;
 public class LevelView extends View{
     // this class will contain all of the entities
     private ArrayList<GameEntity> entities;
@@ -31,7 +30,6 @@ public class LevelView extends View{
         levelX=0;
         levelY=0;
         sorted=true;
-        // implement more if needed
         setXpos(0);
         setYpos(0);
         setWidth(600);
@@ -74,25 +72,20 @@ public class LevelView extends View{
     
     // draws the view and the subviews to the screen
     public void paint(Graphics g){
-        //g.setColor(Color.black);
-        //if(settings.getTiled()){
-            //for(int i=0;i<getWidth();i++)
-            //    if(i%settings.getTileSize()==0)
-            //        g.drawLine(i,0,i,getHeight());
-            //for(int i=0;i<getHeight();i++)
-            //    if(i*settings.getTileSize()==0)
-            //        g.drawLine(0,i,getWidth(),i);
-        //}
         g.setColor(Color.red);
         g.fillRect(getXpos(), getYpos(), getWidth(), getHeight());
+        g.setColor(Color.black);
+        if(settings.getTiled()){
+            for(int i=levelX;i<getWidth()+levelX;i++)
+                if(i%settings.getTileSize()==0)
+                    g.drawLine(i-levelX,0,i-levelX,getHeight());
+            for(int i=levelY;i<getHeight()+levelY;i++)
+                if(i%settings.getTileSize()==0)
+                    g.drawLine(0,i-levelY,getWidth(),i-levelY);
+        }
         if(!sorted)
             sortByDepth();
         super.paint(g);
-    }
-    
-    // returns rectangle of the portion of the level that is currently in view
-    public Rectangle getLevelRect(){
-        return new Rectangle(levelX,levelY,levelWidth,levelHeight);
     }
     
     // sorts the game entity list based on user defined depth
@@ -136,5 +129,5 @@ public class LevelView extends View{
     public void setLevelY(int param){levelY=param;}
     public void setLevelWidth(int param){levelWidth=param;}
     public void setLevelHeight(int param){levelHeight=param;}
-    public void setSorted(boolean param){sorted=false;}
+    public void setSorted(boolean param){sorted=param;}
 }

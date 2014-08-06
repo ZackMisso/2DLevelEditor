@@ -169,7 +169,7 @@ public abstract class View extends Displayable{
         Button button=new Button(cnt);
         button.setXpos(x);
         button.setYpos(y);
-        button.setSuperview(sup); // try to change this to 'this'
+        button.setSuperview(sup);
         button.setTitle(title);
         subviews.add(button);
         return button;

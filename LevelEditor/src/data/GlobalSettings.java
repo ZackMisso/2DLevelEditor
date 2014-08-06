@@ -20,6 +20,7 @@ public class GlobalSettings {
         tileSize=size;
         grid=true;
         tiled=true;
+        System.out.println("SIZE :: "+size);
         if(size==0)
             turnOffTiled();
     }

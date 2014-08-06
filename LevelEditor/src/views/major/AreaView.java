@@ -9,12 +9,12 @@
 package views.major;
 import views.MajorView;
 import views.minor.SelectableLabel;
-import views.minor.Button;
+//import views.minor.Button;
 import data.Area;
 import data.AreaController;
 import java.awt.Color;
 import java.awt.Graphics;
-import java.util.ArrayList;
+//import java.util.ArrayList;
 public class AreaView extends MajorView{
     private AreaController areaController;
     private Area area;
