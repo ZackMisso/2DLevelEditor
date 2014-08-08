@@ -12,8 +12,10 @@ import datastructures.StringToDouble;
 import datastructures.StringToString;
 import datastructures.StringToColor;
 import datastructures.StringToImage;
+import datastructures.StringToEntity;
 import java.util.ArrayList;
 import java.awt.Color;
+import java.awt.Image;
 public class EntityState {
     // all the different types the object can contain
     private ArrayList<StringToByte> bytes;
@@ -23,6 +25,7 @@ public class EntityState {
     private ArrayList<StringToString> strings;
     private ArrayList<StringToColor> colors;
     private ArrayList<StringToImage> images;
+    private ArrayList<StringToEntity> entities;
     private SavedEntityState reference;
     // TODO :: FIGURE OUT HOW TO STORE OBJECTS
     
@@ -34,6 +37,7 @@ public class EntityState {
         strings=new ArrayList<>();
         colors=new ArrayList<>();
         images=new ArrayList();
+        entities=new ArrayList<>();
     }
 
     // initializes the state from the reference
@@ -63,6 +67,7 @@ public class EntityState {
             addColorForKey(Color.black,reference.getColors().get(i));
         }
         // images idk how to implement this one
+        // also idk how to implement entities yet
     }
     
     // writes the state to a string for to be saved as a level file
@@ -88,6 +93,9 @@ public class EntityState {
             // to do later
         }
         for(int i=0;i<images.size();i++){
+            // to do later
+        }
+        for(int i=0;i<entities.size();i++){
             // to do later
         }
         data+="End\n";
@@ -125,6 +133,16 @@ public class EntityState {
         colors.add(new StringToColor(two,one));
     }
     
+    // Adds an Image to the respective keymap
+    public void addImageForKey(Image one,String two){
+        images.add(new StringToImage(two,one));
+    }
+    
+    // Adds am entitiy to the respective keymap
+    public void addEntityForKey(GameEntity one,String two){
+        entities.add(new StringToEntity(two,one));
+    }
+    
     // getter methods
     public ArrayList<StringToByte> getBytes(){return bytes;}
     public ArrayList<StringToInt> getInts(){return ints;}
@@ -133,6 +151,7 @@ public class EntityState {
     public ArrayList<StringToString> getStrings(){return strings;}
     public ArrayList<StringToColor> getColors(){return colors;}
     public ArrayList<StringToImage> getImages(){return images;}
+    public ArrayList<StringToEntity> getEntities(){return entities;}
     public SavedEntityState getReference(){return reference;}
     
     // setter methods
@@ -143,5 +162,6 @@ public class EntityState {
     public void setStrings(ArrayList<StringToString> param){strings=param;}
     public void setColors(ArrayList<StringToColor> param){colors=param;}
     public void setImages(ArrayList<StringToImage> param){images=param;}
+    public void setEntities(ArrayList<StringToEntity> param){entities=param;}
     public void setReference(SavedEntityState param){reference=param;}
 }

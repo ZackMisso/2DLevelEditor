@@ -15,6 +15,11 @@ public class StringToEntity {
         value=null;
     }
     
+    public StringToEntity(String one,GameEntity two){
+        key=one;
+        value=two;
+    }
+    
     // getter methods
     public String getKey(){return key;}
     public GameEntity getValue(){return value;}
