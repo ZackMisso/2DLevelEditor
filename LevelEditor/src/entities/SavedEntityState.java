@@ -19,6 +19,7 @@ public class SavedEntityState{
     private ArrayList<String> strings;
     private ArrayList<String> colors; // to be implemented
     private ArrayList<String> images; // to be implemented
+    private ArrayList<String> entities;
     private String name;
     private boolean selected; // this is not needed
     
@@ -37,6 +38,7 @@ public class SavedEntityState{
         colors=new ArrayList<>();
         images=new ArrayList<>();
         bytes=new ArrayList<>();
+        entities=new ArrayList<>();
         name="";
         selected=false; //?????
     }
@@ -143,6 +145,7 @@ public class SavedEntityState{
     public ArrayList<String> getStrings(){return strings;}
     public ArrayList<String> getColors(){return colors;}
     public ArrayList<String> getImages(){return images;}
+    public ArrayList<String> getEntities(){return entities;}
     public String getName(){return name;}
     
     // setter methods
@@ -154,5 +157,6 @@ public class SavedEntityState{
     public void setStrings(ArrayList<String> param){strings=param;}
     public void setColors(ArrayList<String> param){colors=param;}
     public void setImages(ArrayList<String> param){images=param;}
+    public void setEntities(ArrayList<String> param){entities=param;}
     public void setName(String param){name=param;}
 }
