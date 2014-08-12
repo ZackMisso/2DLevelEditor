@@ -30,6 +30,7 @@ public class GameEntityView extends MajorView{
         setYpos(600);
         setWidth(200);
         setHeight(200);
+        setXOffset(20);
         setShowing(true);
         initializeDefaults();
     }
@@ -88,7 +89,7 @@ public class GameEntityView extends MajorView{
             newinput.setHasTitle(true);
             newinput.setTitle(ints.get(i).getKey());
             newinput.setContents(ints.get(i).getValue()+"");
-            newinput.setWidth(200);
+            newinput.setWidth(150);
             newinput.setHeight(20);
             getScrollables().add(newinput);
             getSubviews().add(newinput);
@@ -121,11 +122,12 @@ public class GameEntityView extends MajorView{
     
     // handles when there are types on this view
     public void types(char c){
+        super.types(c);
         // implement
     }
     
     // scrolls the view up if possible
-    public void scrollUp(int btnval){
+    public void scrollUp(){
         if(getIndex()>0){
             setIndex(getIndex()-1);
             refactorLocationsDefault();
@@ -134,7 +136,7 @@ public class GameEntityView extends MajorView{
     }
     
     // scrolls the view down if possible
-    public void scrollDown(int btnval){
+    public void scrollDown(){
         if(getIndex()+getDisplayCnt()<getScrollables().size()){
             setIndex(getIndex()+1);
             refactorLocationsDefault();
@@ -143,7 +145,7 @@ public class GameEntityView extends MajorView{
     }
 
     // accepts the changes
-    public void add(int btnval){
+    public void add(){
         System.out.println("Accept Button Pressed :: GameEntityView");
         if(current.getIsNew()){
             GrandView grand=(GrandView)getSuperview();
@@ -214,7 +216,7 @@ public class GameEntityView extends MajorView{
     }
 
     // rejects the changes
-    public void remove(int btnval){
+    public void remove(){
         current=null;
         redrawView();
         getReject().setSelected(false);

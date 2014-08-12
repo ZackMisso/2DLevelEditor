@@ -130,7 +130,12 @@ public class GlobalFunctions {
         ArrayList<SavedEntityState> saved=reference.getConfigs();
         for(int i=0;i<saved.size();i++)
             saved.get(i).getBooleans().remove(name);
-        // implement
+        for(int i=0;i<entities.size();i++){
+            EntityState state=entities.get(i).getState();
+            for(int f=0;f<state.getBooleans().size();f++)
+                if(state.getBooleans().get(f).getKey().equals(name))
+                    state.getBooleans().remove(f--);
+        }
     }
     
     public static void removeByteToAllEntities(String name,GrandView reference){
@@ -138,7 +143,12 @@ public class GlobalFunctions {
         ArrayList<SavedEntityState> saved=reference.getConfigs();
         for(int i=0;i<saved.size();i++)
             saved.get(i).getBytes().remove(name);
-        // implement
+        for(int i=0;i<entities.size();i++){
+            EntityState state=entities.get(i).getState();
+            for(int f=0;f<state.getBytes().size();f++)
+                if(state.getBytes().get(f).getKey().equals(name))
+                    state.getBytes().remove(f--);
+        }
     }
     
     public static void removeColorToAllEntities(String name,GrandView reference){
@@ -146,7 +156,12 @@ public class GlobalFunctions {
         ArrayList<SavedEntityState> saved=reference.getConfigs();
         for(int i=0;i<saved.size();i++)
             saved.get(i).getColors().remove(name);
-        // implement
+        for(int i=0;i<entities.size();i++){
+            EntityState state=entities.get(i).getState();
+            for(int f=0;f<state.getColors().size();f++)
+                if(state.getColors().get(f).getKey().equals(name))
+                    state.getColors().remove(f--);
+        }
     }
     
     public static void removeDoubleToAllEntities(String name,GrandView reference){
@@ -154,7 +169,12 @@ public class GlobalFunctions {
         ArrayList<SavedEntityState> saved=reference.getConfigs();
         for(int i=0;i<saved.size();i++)
             saved.get(i).getDoubles().remove(name);
-        // implement
+        for(int i=0;i<entities.size();i++){
+            EntityState state=entities.get(i).getState();
+            for(int f=0;f<state.getDoubles().size();f++)
+                if(state.getDoubles().get(f).getKey().equals(name))
+                    state.getDoubles().remove(f--);
+        }
     }
     
     public static void removeEntityToAllEntities(String name,GrandView reference){
@@ -162,7 +182,12 @@ public class GlobalFunctions {
         ArrayList<SavedEntityState> saved=reference.getConfigs();
         for(int i=0;i<saved.size();i++)
             saved.get(i).getEntities().remove(name);
-        // implement
+        for(int i=0;i<entities.size();i++){
+            EntityState state=entities.get(i).getState();
+            for(int f=0;f<state.getEntities().size();f++)
+                if(state.getEntities().get(f).getKey().equals(name))
+                    state.getEntities().remove(f--);
+        }
     }
     
     public static void removeImageToAllEntities(String name,GrandView reference){
@@ -170,7 +195,12 @@ public class GlobalFunctions {
         ArrayList<SavedEntityState> saved=reference.getConfigs();
         for(int i=0;i<saved.size();i++)
             saved.get(i).getImages().remove(name);
-        // implement
+        for(int i=0;i<entities.size();i++){
+            EntityState state=entities.get(i).getState();
+            for(int f=0;f<state.getImages().size();f++)
+                if(state.getImages().get(f).getKey().equals(name))
+                    state.getImages().remove(f--);
+        }
     }
     
     public static void removeIntToAllEntities(String name,GrandView reference){
@@ -178,7 +208,12 @@ public class GlobalFunctions {
         ArrayList<SavedEntityState> saved=reference.getConfigs();
         for(int i=0;i<saved.size();i++)
             saved.get(i).getInts().remove(name);
-        // implement
+        for(int i=0;i<entities.size();i++){
+            EntityState state=entities.get(i).getState();
+            for(int f=0;f<state.getInts().size();f++)
+                if(state.getInts().get(f).getKey().equals(name))
+                    state.getInts().remove(f--);
+        }
     }
     
     public static void removeStringToAllEntities(String name,GrandView reference){
@@ -186,9 +221,13 @@ public class GlobalFunctions {
         ArrayList<SavedEntityState> saved=reference.getConfigs();
         for(int i=0;i<saved.size();i++)
             saved.get(i).getStrings().remove(name);
-        // implement
+        for(int i=0;i<entities.size();i++){
+            EntityState state=entities.get(i).getState();
+            for(int f=0;f<state.getStrings().size();f++)
+                if(state.getStrings().get(f).getKey().equals(name))
+                    state.getStrings().remove(f--);
+        }
     }
-    
     // TODO :: Possibly add some function at the end of the previous methods
     // to update some views that use the entity states.
 }

@@ -19,9 +19,6 @@ public class AddEntityStateView implements TemporaryView{
         reference=null;
     }
     
-    // xpos = 600
-    // ypos=300
-    
     @Override // initializes the view
     public void initializeView(){
         System.out.println("Initializing Add Entity State");

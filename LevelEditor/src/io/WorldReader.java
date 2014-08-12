@@ -36,6 +36,13 @@ public class WorldReader{
         return images;
     }
     
+    // just reads the names of the saved levels
+    public ArrayList<String> readSavedLevelNames(){
+        ArrayList<String> names=new ArrayList<>();
+        // implement
+        return null;
+    }
+    
     // reads the Saved Entity States from a file
     /*public void readSavedStates(){
         ArrayList<SavedEntityState> states=new ArrayList<>();

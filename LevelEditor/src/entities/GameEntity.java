@@ -7,11 +7,11 @@
 package entities;
 import views.View;
 import views.major.LevelView;
+import views.major.GameEntityView;
 import datastructures.StringToInt;
 import java.awt.Image;
 import java.awt.Graphics;
 import java.awt.Color;
-import java.awt.Rectangle;
 import java.util.ArrayList;
 public class GameEntity extends View{
     private EntityState state;
@@ -41,7 +41,9 @@ public class GameEntity extends View{
     public void clicked(){
         getSuperview().subviewFalsify();
         setSelected(true);
-        // implement more if needed
+        GameEntityView gev=findGrandView().getGameEntity();
+        gev.setCurrent(this);
+        gev.redrawView();
     }
     
     // handles typed input
@@ -78,7 +80,6 @@ public class GameEntity extends View{
     
     // returns the data that should be written to the level file
     public String writeData(){
-        //String data="THIS IS A TEST";
         String data=state.writeState();
         return data+"\n";
     }
@@ -92,32 +93,8 @@ public class GameEntity extends View{
     private int calculateY(LevelView view){
         return startY-view.getLevelY();
     }
-    
-    // This is depreciated
-    public void levelPaint(Graphics g,LevelView view){
-        Rectangle one=view.getRect();
-        Rectangle two=getRect();
-        if(one.intersects(two)){
-            if(image==null&&color==null)
-                checkForGraphics(view);
-            setXpos(calculateX(view));
-            setYpos(calculateY(view));
-            if(image!=null){
-                g.drawImage(image,getXpos(),getYpos(),null);
-            }else if(color!=null){
-                // draw box with color
-            }else{
-                g.setColor(Color.black);
-                g.fillRect(getXpos(),getYpos(),getWidth(),getHeight());
-            }
-            if(getSelected()){
-                g.setColor(Color.yellow);
-                g.drawRect(getXpos(),getYpos(),getWidth(),getHeight());
-            }
-        }
-    }
 
-    // the regular pain method
+    // the regular paint method
     public void paint(Graphics g){
         LevelView view=(LevelView)getSuperview();
         if(image==null&&color==null)

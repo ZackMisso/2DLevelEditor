@@ -79,12 +79,12 @@ public class OptionView extends MajorView{
     }
     
     @Override
-    public void add(int btnval){acceptCurrentView(btnval);}
+    public void add(){acceptCurrentView();}
     @Override
-    public void remove(int btnval){rejectCurrentView(btnval);}
+    public void remove(){rejectCurrentView();}
     
     // checks and does the accepting functionality for the current view
-    private void acceptCurrentView(int btnval){
+    private void acceptCurrentView(){
         // implement button modifier logic
         if(addEntityStateObj)
             temporary.acceptView();//acceptAddEntityStateObj();
@@ -101,7 +101,7 @@ public class OptionView extends MajorView{
     }
     
     // checks and does the rejecting functionality for the current view
-    private void rejectCurrentView(int btnval){
+    private void rejectCurrentView(){
         temporary.clearView();
         getReject().setSelected(false);
         referenceObject=false;
@@ -133,18 +133,18 @@ public class OptionView extends MajorView{
     }
     
     @Override // handles the scroll up logic
-    public void scrollUp(int btnval){
+    public void scrollUp(){
         if(getIndex()>0){
-            setIndex(getIndex()-radialCols); // this is for only one case
+            setIndex(getIndex()); // this is for only one case
             refactorViews();
         }
         getScrollUp().setSelected(false);
     }
     
     @Override // handles the scroll down logic
-    public void scrollDown(int btnval){
+    public void scrollDown(){
         if(getIndex()+getDisplayCnt()<getScrollables().size()){
-            setIndex(getIndex()+radialCols); // this is for only one case
+            setIndex(getIndex()); // this is for only one case
             refactorViews();
         }
         getScrollDown().setSelected(false);
@@ -191,6 +191,7 @@ public class OptionView extends MajorView{
     
     // handles the types on this view
     @Override public void types(char c){
+        super.types(c);
         // implement
     }
     

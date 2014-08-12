@@ -12,7 +12,6 @@ public class Button extends View{
     private Image image;
     private String title; // maybe implement this
     private int index;
-    private boolean processed; // if the action for a click has been processed.
     
     // default constructor
     public Button(){
@@ -22,7 +21,6 @@ public class Button extends View{
         index=-100;
         setWidth(50);
         setHeight(20);
-        processed=false;
     }
     
     // initializes button with index as parameter
@@ -105,11 +103,9 @@ public class Button extends View{
     public Image getImage(){return image;}
     public String getTitle(){return title;}
     public int getIndex(){return index;}
-    public boolean getProcessed(){return processed;}
     
     // setter methods
     public void setImage(Image param){image=param;}
     public void setTitle(String param){title=param;}
     public void setIndex(int param){index=param;}
-    public void setProcessed(boolean param){processed=param;}
 }

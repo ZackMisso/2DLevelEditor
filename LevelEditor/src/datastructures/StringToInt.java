@@ -6,7 +6,7 @@
  * 
  */
 package datastructures;
-public class StringToInt {
+public class StringToInt{
     private String key;
     private int value;
     

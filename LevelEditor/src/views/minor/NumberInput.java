@@ -95,11 +95,16 @@ public class NumberInput extends View{
     public void paint(Graphics g){
         int x=getXpos();
         g.setColor(Color.black);
+        g.fillRect(x,getYpos(),getWidth(),getHeight());
+        g.setColor(Color.white);
         if(hasTitle){
             // draw the title
         }
-        g.fillRect(x,getYpos(),getWidth(),getHeight());
-        g.setColor(Color.white);
+        if(!title.equals("")){
+            g.drawString(title,getXpos()-31,getYpos()+14);
+        }
+        //g.fillRect(x,getYpos(),getWidth(),getHeight());
+        //g.setColor(Color.white);
         g.drawString(contents,x+4,getYpos()+10);
         if(getSelected()){
             g.setColor(Color.yellow);

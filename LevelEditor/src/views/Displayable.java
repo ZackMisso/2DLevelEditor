@@ -5,14 +5,11 @@
  * 
  */
 package views;
-import java.awt.Rectangle;
 public abstract class Displayable {
     private int xpos;
     private int ypos;
     private int width;
     private int height;
-    //private boolean showing; // maybe add
-    //private Image image; // maybe add
     
     public Displayable(){ // default constructor
         this(0,0,0,0);
@@ -24,10 +21,6 @@ public abstract class Displayable {
         ypos=y;
         width=w;
         height=h;
-    }
-    
-    public Rectangle getRect(){
-        return new Rectangle(xpos,ypos,width,height);
     }
     
     // getter methods

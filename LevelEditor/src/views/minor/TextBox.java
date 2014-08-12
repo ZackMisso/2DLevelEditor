@@ -57,6 +57,7 @@ public class TextBox extends View{
     public void types(char c){
         if(Character.isLetter(c))
             contents=contents+c;
+        if(c==10)getSuperview().types(c);
         if(c==8&&contents.length()>0)
             contents=contents.substring(0,contents.length()-1);
     }
@@ -68,22 +69,13 @@ public class TextBox extends View{
     
     // draws the TextBox to the screen
     public void paint(Graphics g){
-        //System.out.println("TOTAL");
-        //System.out.println("X :: "+getXpos()+" Y :: "+getYpos());
-        //System.out.println("W :: "+spacesPerRow*8+" H :: "+depth*8);
         int x=getXpos();
         g.setColor(Color.black);
-        if(hasTitle){
-            // implement
-        }
         g.fillRect(x,getYpos(),getWidth(),getHeight());
         g.setColor(Color.yellow);
         g.drawString(contents,x+4,getYpos()+10);
-        // possibly implement more
-        if(getSelected()){
-            //g.setColor(Color.yellow);
+        if(getSelected())
             g.drawRect(getXpos(),getYpos(),getWidth(),getHeight());
-        }
     }
     
     // getter method

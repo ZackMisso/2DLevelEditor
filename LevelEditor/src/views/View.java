@@ -5,6 +5,7 @@
  * 
  */
 package views;
+import java.awt.Color;
 import views.major.GrandView;
 import views.minor.Button;
 import views.minor.SelectableLabel;
@@ -19,18 +20,10 @@ public abstract class View extends Displayable{
     private ArrayList<View> subviews;
     private View superview;
     private boolean showing;
-    private boolean acceptsText;
-    private boolean acceptsNumbers;
     private boolean selected;
     
     public View(){ // default constructor
-        super();
-        subviews=new ArrayList<>();
-        superview=null;
-        showing=false;
-        acceptsText=false;
-        acceptsNumbers=false;
-        selected=false;
+        this(0,0,0,0);
     }
     
     public View(int x,int y,int w,int h){
@@ -38,8 +31,6 @@ public abstract class View extends Displayable{
         subviews=new ArrayList<>();
         superview=null;
         showing=false;
-        acceptsText=false;
-        acceptsNumbers=false;
         selected=false;
     }
     
@@ -51,9 +42,12 @@ public abstract class View extends Displayable{
     
     // if the view is being displayed, draw it and its subviews on the screen
     public void paint(Graphics g){
-        if(showing)
+        if(showing){
+            //g.setColor(Color.black);
+            //g.drawRect(getXpos(),getYpos(),getWidth(),getHeight());
             for(int i=0;i<subviews.size();i++)
                 subviews.get(i).paint(g);
+        }
     }
     
     // adds a view as a subview of this view
@@ -113,7 +107,6 @@ public abstract class View extends Displayable{
         return -1;
     }
     
-    // THIS MAY NOT BE NEEDED
     // returns the list of all selected labels within this subview
     public ArrayList<SelectableLabel> getSelectableLabels(){
         ArrayList<SelectableLabel> list=new ArrayList<>();
@@ -199,18 +192,12 @@ public abstract class View extends Displayable{
     // getter methods
     public ArrayList<View> getSubviews(){return subviews;}
     public View getSuperview(){return superview;}
-    //public int getIndex(){return index;}
     public boolean getShowing(){return showing;}
-    public boolean getAcceptsText(){return acceptsText;}
-    public boolean getAcceptsNumbers(){return acceptsNumbers;}
     public boolean getSelected(){return selected;}
     
     // setter methods
     public void setSubviews(ArrayList<View> param){subviews=param;}
     public void setSuperview(View param){superview=param;}
-    //public void setIndex(int param){index=param;}
     public void setShowing(boolean param){showing=param;}
-    public void setAcceptsText(boolean param){acceptsText=param;}
-    public void setAcceptsNumbers(boolean param){acceptsNumbers=param;}
     public void setSelected(boolean param){selected=param;}
 }

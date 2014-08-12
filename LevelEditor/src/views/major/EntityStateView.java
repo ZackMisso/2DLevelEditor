@@ -113,7 +113,7 @@ public class EntityStateView extends MajorView{
             Label label=new Label();
             label.setSuperview(this);
             label.setXpos(lx);
-            label.setYpos(y);
+            label.setYpos(y+20);
             label.setText("INT");
             SelectableLabel slabel=new SelectableLabel();
             slabel.setText(list.get(i));
@@ -273,18 +273,19 @@ public class EntityStateView extends MajorView{
     
     // handles types
     public void types(char c){
+        super.types(c);
         // implement
     }
     
     // handles up scrolls
-    public void scrollUp(int btnval){
+    public void scrollUp(){
         if(getIndex()>0)
             setIndex(getIndex()-1);
         getScrollUp().setSelected(false);
     }
     
     // handles down scrolls
-    public void scrollDown(int btnval){
+    public void scrollDown(){
         if(getIndex()+getDisplayCnt()<viewNames.size())
             setIndex(getIndex()+1);
         getScrollDown().setSelected(false);
@@ -292,7 +293,7 @@ public class EntityStateView extends MajorView{
     
     // tells the level editor to pull up the add entity state obj screen in the
     // options view
-    public void add(int btnval){
+    public void add(){
         OptionView temp=null;
         temp=((GrandView)getSuperview()).getOptions();
         if(temp!=null&&current!=null&&!temp.getAddEntityStateObj()){
@@ -313,7 +314,7 @@ public class EntityStateView extends MajorView{
     
     // tells the level editor to pull up the add entity state obj screen in the
     // options view
-    public void remove(int btnval){
+    public void remove(){
         LevelView level=null;
         OptionView temp=null;
         temp=((GrandView)getSuperview()).getOptions();

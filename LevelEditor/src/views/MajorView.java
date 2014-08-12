@@ -18,6 +18,8 @@ public abstract class MajorView extends View{
     private boolean allowsAccepting; // probably dont need this
     private int index;
     private int displayCnt;
+    private int xOffset;
+    private int yOffset;
 
     public MajorView(){
         super();
@@ -30,6 +32,8 @@ public abstract class MajorView extends View{
         allowsAccepting=false;
         index=0;
         displayCnt=3;
+        xOffset=0;
+        yOffset=0;
     }
     
     // initializes the buttons for the view
@@ -48,13 +52,13 @@ public abstract class MajorView extends View{
     }
     
     public void refactorLocationsDefault(){
-        int tempX=getXpos()+10;
-        int tempY=getYpos()+20;
+        int tempX=getXpos()+10+xOffset;
+        int tempY=getYpos()+20+yOffset;
         for(int i=0;i<scrollables.size();i++){
             if(i>=index&&i<=index+displayCnt){
                 scrollables.get(i).setXpos(tempX);
                 scrollables.get(i).setYpos(tempY);
-                tempY+=40;
+                tempY+=30;
             }else{
                 scrollables.get(i).setXpos(-1000);
                 scrollables.get(i).setYpos(-1000);
@@ -70,19 +74,19 @@ public abstract class MajorView extends View{
     public void update(){
         int num=buttonSelected();
         if(scrollUp!=null&&scrollUp.getIndex()==num)
-            scrollUp(num);
+            scrollUp();
         if(scrollDown!=null&&scrollDown.getIndex()==num)
-            scrollDown(num);
+            scrollDown();
         if(accept!=null&&accept.getIndex()==num)
-            add(num);
+            add();
         if(reject!=null&&reject.getIndex()==num)
-            remove(num);
+            remove();
     }
     
-    public abstract void scrollUp(int btnval);
-    public abstract void scrollDown(int btnval);
-    public abstract void add(int btnval);
-    public abstract void remove(int btnval);
+    public abstract void scrollUp();
+    public abstract void scrollDown();
+    public abstract void add();
+    public abstract void remove();
     
     // Type conversion methods
     public ArrayList<SelectableLabel> getScrollablesAsLabels(){
@@ -94,7 +98,7 @@ public abstract class MajorView extends View{
 
     // key shortcuts for this view
     public void types(char c){
-        // implement
+        if(c==10)add();
     }
     
     // getter methods
@@ -105,6 +109,8 @@ public abstract class MajorView extends View{
     public Button getReject(){return reject;}
     public int getIndex(){return index;}
     public int getDisplayCnt(){return displayCnt;}
+    public int getXOffset(){return xOffset;}
+    public int getYOffset(){return yOffset;}
     public boolean getAllowsScrollables(){return allowsScrollables;}
     public boolean getAllowsAccepting(){return allowsAccepting;}
     
@@ -116,6 +122,8 @@ public abstract class MajorView extends View{
     public void setReject(Button param){reject=param;}
     public void setIndex(int param){index=param;}
     public void setDisplayCnt(int param){displayCnt=param;}
+    public void setXOffset(int param){xOffset=param;}
+    public void setYOffset(int param){yOffset=param;}
     public void setAllowsScrollables(boolean param){allowsScrollables=param;}
     public void setAllowsAccepting(boolean param){allowsAccepting=param;}
 }

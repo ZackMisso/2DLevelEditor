@@ -79,7 +79,7 @@ public class SavedEntityState{
     public void addDoubleForKey(String key){
         doubles.add(key);
         if(reference!=null){
-        	// implement the change in every current entity
+            // implement the change in every current entity
         	ArrayList<GameEntity> entities=reference.getEntities();
         	for(int i=0;i<entities.size();i++){
         		EntityState state=entities.get(i).getState();

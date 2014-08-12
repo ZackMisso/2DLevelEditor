@@ -33,7 +33,7 @@ public class LevelEntitiesView extends MajorView{
     }
     
     // handles the scroll up functionality
-    public void scrollUp(int btnVal){
+    public void scrollUp(){
         if(getIndex()>0){
             setIndex(getIndex()-1);
         }
@@ -41,7 +41,7 @@ public class LevelEntitiesView extends MajorView{
     }
     
     // handles the scroll down functionality
-    public void scrollDown(int btnVal){
+    public void scrollDown(){
         if(getIndex()+getDisplayCnt()<entities.size()){
             setIndex(getIndex()+1);
         }
@@ -49,13 +49,13 @@ public class LevelEntitiesView extends MajorView{
     }
     
     // allows the user to add an instance of the selected entity
-    public void add(int btnval){
+    public void add(){
         // implement
         getAccept().setSelected(false);
     }
     
     // allows the user to remove the selected game object
-    public void remove(int btnval){
+    public void remove(){
         // implement
         getReject().setSelected(false);
     }
@@ -89,6 +89,7 @@ public class LevelEntitiesView extends MajorView{
     
     // handles the types on this view
     public void types(char c){
+        super.types(c);
         // implement
     }
     

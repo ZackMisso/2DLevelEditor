@@ -43,29 +43,23 @@ public class EntityState {
     // initializes the state from the reference
     public void initializeFromReference(){
         // ints
-        for(int i=0;i<reference.getInts().size();i++){
+        for(int i=0;i<reference.getInts().size();i++)
             addIntForKey(0,reference.getInts().get(i));
-        }
         // doubles
-        for(int i=0;i<reference.getDoubles().size();i++){
+        for(int i=0;i<reference.getDoubles().size();i++)
             addDoubleForKey(0.0,reference.getDoubles().get(i));
-        }
         // booleans
-        for(int i=0;i<reference.getBooleans().size();i++){
+        for(int i=0;i<reference.getBooleans().size();i++)
             addBooleanForKey(false,reference.getBooleans().get(i));
-        }
         // bytes
-        for(int i=0;i<reference.getBytes().size();i++){
+        for(int i=0;i<reference.getBytes().size();i++)
             addByteForKey((byte)0,reference.getBytes().get(i));
-        }
         // strings
-        for(int i=0;i<reference.getStrings().size();i++){
+        for(int i=0;i<reference.getStrings().size();i++)
             addStringForKey("",reference.getBytes().get(i));
-        }
         // colors
-        for(int i=0;i<reference.getColors().size();i++){
+        for(int i=0;i<reference.getColors().size();i++)
             addColorForKey(Color.black,reference.getColors().get(i));
-        }
         // images idk how to implement this one
         // also idk how to implement entities yet
     }
@@ -74,21 +68,16 @@ public class EntityState {
     public String writeState(){
         String data="";
         data+=reference.getName()+"\n";
-        for(int i=0;i<bytes.size();i++){
+        for(int i=0;i<bytes.size();i++)
             data+=bytes.get(i).getKey()+" "+bytes.get(i).getValue()+"\n";
-        }
-        for(int i=0;i<ints.size();i++){
+        for(int i=0;i<ints.size();i++)
             data+=ints.get(i).getKey()+" "+ints.get(i).getValue()+"\n";
-        }
-        for(int i=0;i<doubles.size();i++){
+        for(int i=0;i<doubles.size();i++)
             data+=doubles.get(i).getKey()+" "+doubles.get(i).getValue()+"\n";
-        }
-        for(int i=0;i<booleans.size();i++){
+        for(int i=0;i<booleans.size();i++)
             data+=booleans.get(i).getKey()+" "+booleans.get(i).getValue()+"\n";
-        }
-        for(int i=0;i<strings.size();i++){
+        for(int i=0;i<strings.size();i++)
             data+=strings.get(i).getKey()+" "+strings.get(i).getValue()+"\n";
-        }
         for(int i=0;i<colors.size();i++){
             // to do later
         }

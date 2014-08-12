@@ -32,7 +32,7 @@ public class SavedEntityStateView extends MajorView{
     }
     
     // handles when the scroll up button is selected
-    public void scrollUp(int btnVal){
+    public void scrollUp(){
         if(getIndex()>0){
             setIndex(getIndex()-1);
             refactorLocationsDefault();
@@ -41,7 +41,7 @@ public class SavedEntityStateView extends MajorView{
     }
     
     // handles when the scroll down button is selected
-    public void scrollDown(int btnVal){
+    public void scrollDown(){
         if(getIndex()+getDisplayCnt()<savedStates.size()){
             setIndex(getIndex()+1);
             refactorLocationsDefault();
@@ -50,7 +50,7 @@ public class SavedEntityStateView extends MajorView{
     }
     
     // handles when the add button is selected
-    public void add(int btnVal){
+    public void add(){
         OptionView temp=null;
         SavedEntityState selected=null;
         temp=((GrandView)getSuperview()).getOptions();
@@ -88,7 +88,7 @@ public class SavedEntityStateView extends MajorView{
     }
     
     // handles when the remove button is selected
-    public void remove(int btnVal){
+    public void remove(){
         OptionView temp=null;
         SavedEntityState state=null;
         View grand=getSuperview();
@@ -153,7 +153,7 @@ public class SavedEntityStateView extends MajorView{
     
     // handles the types on this view
     public void types(char c){
-    	System.out.println("key typed :: SavedEntityStateView");
+    	super.types(c);
         // implement
     }
     
