@@ -95,6 +95,8 @@ public class GrandView extends View{
         options=new OptionView();
         options.setSuperview(this);
         getSubviews().add(options);
+        
+        levelEntities.setEntities(level.getEntities());
     }
     
     // reads the previous saved data from a file

@@ -57,8 +57,6 @@ public class NumberInput extends View{
     
     // handles user types
     public void types(char c){
-        if(c==8&&contents.length()>0)
-            contents=contents.substring(0,contents.length()-1);
         if(Character.isDigit(c)){
             contents+=c;
             long max=0;
@@ -76,7 +74,12 @@ public class NumberInput extends View{
                 contents=contents.substring(0,contents.length()-1);
                 System.out.println("Input was out of bounds :: NumberInput");
             }
-        }else{
+        }
+        else if(c==8&&contents.length()>0)
+            contents=contents.substring(0,contents.length()-1);
+        else if(c==10)getSuperview().types(c);
+        else if(c==96)getSuperview().types(c);
+        else{
             System.out.println("Minor Error :: Expecting digit :: NumberInput");
         }
     }

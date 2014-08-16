@@ -58,7 +58,7 @@ public abstract class MajorView extends View{
             if(i>=index&&i<=index+displayCnt){
                 scrollables.get(i).setXpos(tempX);
                 scrollables.get(i).setYpos(tempY);
-                tempY+=30;
+                tempY+=34;
             }else{
                 scrollables.get(i).setXpos(-1000);
                 scrollables.get(i).setYpos(-1000);
@@ -99,6 +99,22 @@ public abstract class MajorView extends View{
     // key shortcuts for this view
     public void types(char c){
         if(c==10)add();
+        if(c==96)selectNext();
+    }
+    
+    // finds the selected item in the list of scrollables and selects the next one
+    public void selectNext(){
+        int indexToSelect=0;
+        for(int i=0;i<scrollables.size();i++)
+            if(scrollables.get(i).getSelected()){
+                if(i!=scrollables.size()-1)
+                    indexToSelect=i+1;
+                scrollables.get(i).setSelected(false);
+            }
+        if(!scrollables.isEmpty()){
+            scrollables.get(indexToSelect).clicked();
+            findGrandView().getInputs().setSelectedView(scrollables.get(indexToSelect));
+        }
     }
     
     // getter methods

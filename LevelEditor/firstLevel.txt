@@ -1,0 +1,5 @@
+mario
+startX 100
+startY 299
+End
+

@@ -53,12 +53,6 @@ public class InputController {
         // maybe implement more later
     }
     
-    // THIS MAY NOT BE NEEDED
-    // this method updates the specified selected objects
-    //public void update(){
-    //    // implement
-    //}
-    
     // getter methods
     public GameEntity getSelectedEntity(){return selectedEntity;}
     public Area getSelectedArea(){return selectedArea;}

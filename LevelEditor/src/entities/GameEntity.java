@@ -8,6 +8,8 @@ package entities;
 import views.View;
 import views.major.LevelView;
 import views.major.GameEntityView;
+import views.major.LevelEntitiesView;
+import views.minor.SelectableLabel;
 import datastructures.StringToInt;
 import java.awt.Image;
 import java.awt.Graphics;
@@ -42,6 +44,11 @@ public class GameEntity extends View{
         getSuperview().subviewFalsify();
         setSelected(true);
         GameEntityView gev=findGrandView().getGameEntity();
+        LevelEntitiesView lev=findGrandView().getLevelEntities();
+        ArrayList<View> labels=lev.getScrollables();
+        for(int i=0;i<labels.size();i++)
+            if(((SelectableLabel)labels.get(i)).getReference()==this)
+                labels.get(i).setSelected(true);
         gev.setCurrent(this);
         gev.redrawView();
     }

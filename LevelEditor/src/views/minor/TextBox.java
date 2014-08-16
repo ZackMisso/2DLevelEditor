@@ -57,8 +57,9 @@ public class TextBox extends View{
     public void types(char c){
         if(Character.isLetter(c))
             contents=contents+c;
-        if(c==10)getSuperview().types(c);
-        if(c==8&&contents.length()>0)
+        else if(c==10)getSuperview().types(c);
+        else if(c==96)getSuperview().types(c);
+        else if(c==8&&contents.length()>0)
             contents=contents.substring(0,contents.length()-1);
     }
 

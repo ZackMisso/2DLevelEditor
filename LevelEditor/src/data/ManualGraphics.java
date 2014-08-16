@@ -13,6 +13,7 @@ import java.util.ArrayList;
 import javax.imageio.ImageIO;
 import java.io.File;
 import java.io.IOException;
+
 public class ManualGraphics{
     private ArrayList<StringToImage> images;
     
@@ -28,12 +29,12 @@ public class ManualGraphics{
             // mario
             StringToImage mario=new StringToImage();
             mario.setKey("mario");
-            mario.setValue(ImageIO.read(new File("mario.png")));
+            mario.setValue(ImageIO.read(new File("src/resources/mario.png")));
             images.add(mario);
             // floor
             StringToImage floor=new StringToImage();
             floor.setKey("floor");
-            floor.setValue(ImageIO.read(new File("floor.png")));
+            floor.setValue(ImageIO.read(new File("src/resources/floor.png")));
             images.add(floor);
         // implement
         }catch(IOException e){

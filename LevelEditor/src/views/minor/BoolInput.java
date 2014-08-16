@@ -35,7 +35,9 @@ public class BoolInput extends View{
 
     // what happens when the user types
     public void types(char c){
-    	// does nothing
+    	if(c==10)getSuperview().types(c);
+        if(c==96)getSuperview().types(c);
+        // implement more as needed
     }
 
     // DELETE THIS

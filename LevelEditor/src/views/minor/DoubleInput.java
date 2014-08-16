@@ -23,7 +23,9 @@ public class DoubleInput extends View{
     }
     
     public void types(char c){
-        // implement
+        if(c==10)getSuperview().types(c);
+        if(c==96)getSuperview().types(c);
+        // implement more as needed
     }
     
     public double getContentsAsDouble(){

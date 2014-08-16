@@ -13,13 +13,14 @@ import java.util.ArrayList;
 import java.awt.Color;
 public class LevelEntitiesView extends MajorView{
     private ArrayList<GameEntity> entities;
-    private ArrayList<SelectableLabel> labels;
+    //private ArrayList<SelectableLabel> labels;
+    private int prevSize;
     
     // default constructor
     public LevelEntitiesView(){
         super();
         entities=new ArrayList<>();
-        labels=new ArrayList<>();
+        //labels=new ArrayList<>();
         setAllowsScrollables(true);
         setAllowsAccepting(true);
         setIndex(0);
@@ -29,7 +30,15 @@ public class LevelEntitiesView extends MajorView{
         setYpos(600);
         setWidth(200);
         setHeight(200);
+        prevSize=0;
         initializeDefaults();
+    }
+    
+    // checks if the list of objects needs to be updated
+    public void update(){
+        super.update();
+        if(prevSize!=entities.size())
+            refactorLabels();
     }
     
     // handles the scroll up functionality
@@ -37,6 +46,7 @@ public class LevelEntitiesView extends MajorView{
         if(getIndex()>0){
             setIndex(getIndex()-1);
         }
+        System.out.println(entities.size());
         getScrollUp().setSelected(false);
     }
     
@@ -62,11 +72,12 @@ public class LevelEntitiesView extends MajorView{
 
     // resets the labels to be drawn
     public void refactorLabels(){
-        labels.clear();
+        clearScrollables();
+        prevSize=entities.size();
         for(int i=0;i<entities.size();i++){
             System.out.println("Refactoring Labels :: LevelEntitiesView");
             SelectableLabel temp=new SelectableLabel();
-            temp.setText(entities.get(i).getState().getReference().getName());
+            temp.setText(entities.get(i).getState().getReference().getName()+"     x:"+entities.get(i).getStartX()+"  y:"+entities.get(i).getStartY());
             temp.setIndex(i);
             temp.setRepEntity(true);
             temp.setReference(entities.get(i));
@@ -74,15 +85,16 @@ public class LevelEntitiesView extends MajorView{
             temp.setHeight(30);
             // implement more if needed
             temp.setSuperview(this);
-            labels.add(temp);
+            getScrollables().add(temp);
             getSubviews().add(temp);
         }
         refactorLocationsDefault();
-        System.out.println("Change Test :: LevelEntitiesView");
+        //System.out.println("Change Test :: LevelEntitiesView");
     }
     
     // handles the clicks on this view
     public void clicked(){
+        System.out.println("Level Entities View was Clicked");
         subviewFalsify();
         // implement more if needed
     }
@@ -103,9 +115,11 @@ public class LevelEntitiesView extends MajorView{
     
     // getter methods
     public ArrayList<GameEntity> getEntities(){return entities;}
-    public ArrayList<SelectableLabel> getLabels(){return labels;}
+    //public ArrayList<SelectableLabel> getLabels(){return labels;}
+    public int getPrevSize(){return prevSize;}
     
     // setter methods
     public void setEntities(ArrayList<GameEntity> param){entities=param;}
-    public void setLabels(ArrayList<SelectableLabel> param){labels=param;}
+    //public void setLabels(ArrayList<SelectableLabel> param){labels=param;}
+    public void setPrevSize(int param){prevSize=param;}
 }

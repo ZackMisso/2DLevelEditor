@@ -27,7 +27,8 @@ public class RadialButton extends View{
     // handles input from keyboard
     public void types(char c){
         if(c==10)getSuperview().types(c);
-        // will do nothing at first
+        if(c==96)getSuperview().types(c);
+        // implement more as needed
     }
     
     public void paint(Graphics g){

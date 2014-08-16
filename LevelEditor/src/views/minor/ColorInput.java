@@ -35,7 +35,9 @@ public class ColorInput extends View{
 
     // handles types
     public void types(char c){
-    	// this should do nothing
+    	if(c==10)getSuperview().types(c);
+        if(c==96)getSuperview().types(c);
+        // implement more as needed
     }
 
     public void paint(Graphics g){

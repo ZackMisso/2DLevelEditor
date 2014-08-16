@@ -51,6 +51,7 @@ public class GameEntityView extends MajorView{
             initializeIntInputs();
             initializeStringInputs();
             refactorLocationsDefault();
+            selectNext();
             // implement more if needed
         }
     }

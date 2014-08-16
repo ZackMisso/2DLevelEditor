@@ -10,6 +10,7 @@ public abstract class Displayable {
     private int ypos;
     private int width;
     private int height;
+    private float scale; // implement later
     
     public Displayable(){ // default constructor
         this(0,0,0,0);
@@ -21,6 +22,7 @@ public abstract class Displayable {
         ypos=y;
         width=w;
         height=h;
+        scale=0.0f;
     }
     
     // getter methods
@@ -28,10 +30,12 @@ public abstract class Displayable {
     public int getYpos(){return ypos;}
     public int getWidth(){return width;}
     public int getHeight(){return height;}
+    public float getScale(){return scale;}
     
     // setter methods
     public void setXpos(int param){xpos=param;}
     public void setYpos(int param){ypos=param;}
     public void setWidth(int param){width=param;}
     public void setHeight(int param){height=param;}
+    public void setScale(float param){scale=param;}
 }

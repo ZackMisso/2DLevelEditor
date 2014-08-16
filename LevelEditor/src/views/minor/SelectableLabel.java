@@ -6,6 +6,7 @@
  */
 package views.minor;
 import views.View;
+import views.MajorView;
 import views.major.GrandView;
 import views.major.EntityStateView;
 import entities.SavedEntityState;
@@ -49,15 +50,18 @@ public class SelectableLabel extends View{
     // handles the clicks on this view
     public void clicked(){
         //subviewFalsify();
-        setSelected(true);
         System.out.println("SELECTED==true");
         if(getSuperview()!=null){
+            getSuperview().labelFalsify();
+            setSelected(true);
             //InputController input=((PokemonEditorGrandView)getSuperview().getSuperview()).getInputs();
             if(repArea){
                 // implement
             }
             if(repEntity){
-                // implement
+                GameEntity entity=(GameEntity)reference;
+                entity.clicked();
+                // implement more if needed
             }
             if(repSavedEntity){
                 if(getSuperview()!=null){

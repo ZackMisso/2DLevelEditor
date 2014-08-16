@@ -129,6 +129,13 @@ public abstract class View extends Displayable{
         colorInputFalsify();
     }
     
+    // sets all selectable labels selected valuesto false
+    public void labelFalsify(){
+        for(int i=0;i<subviews.size();i++)
+            if(subviews.get(i)instanceof SelectableLabel)
+                subviews.get(i).setSelected(false);
+    }
+    
     // sets all subviews that are textboxes selected values to false
     public void textBoxFalsify(){
         for(int i=0;i<subviews.size();i++)

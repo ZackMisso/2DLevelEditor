@@ -65,6 +65,7 @@ public class EntityStateView extends MajorView{
             ypos=createStringLabels(current.getStrings(),ypos,lxpos,slxpos);
             ypos=createColorLabels(current.getColors(),ypos,lxpos,slxpos);
             ypos=createImageLabels(current.getImages(),ypos,lxpos,slxpos);
+            //selectNext();
             // implement more if necessary
         }
         System.out.println("redrawView called");

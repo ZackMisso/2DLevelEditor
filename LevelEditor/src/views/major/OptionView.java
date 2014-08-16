@@ -135,7 +135,7 @@ public class OptionView extends MajorView{
     @Override // handles the scroll up logic
     public void scrollUp(){
         if(getIndex()>0){
-            setIndex(getIndex()); // this is for only one case
+            setIndex(getIndex()-1); // this is for only one case
             refactorViews();
         }
         getScrollUp().setSelected(false);
@@ -144,7 +144,7 @@ public class OptionView extends MajorView{
     @Override // handles the scroll down logic
     public void scrollDown(){
         if(getIndex()+getDisplayCnt()<getScrollables().size()){
-            setIndex(getIndex()); // this is for only one case
+            setIndex(getIndex()+1); // this is for only one case
             refactorViews();
         }
         getScrollDown().setSelected(false);
