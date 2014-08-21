@@ -127,15 +127,15 @@ public abstract class MajorView extends View{
     public int getDisplayCnt(){return displayCnt;}
     public int getXOffset(){return xOffset;}
     public int getYOffset(){return yOffset;}
-    public boolean getAllowsScrollables(){return allowsScrollables;}
-    public boolean getAllowsAccepting(){return allowsAccepting;}
+    //public boolean getAllowsScrollables(){return allowsScrollables;}
+    //public boolean getAllowsAccepting(){return allowsAccepting;}
     
     // setter methods
     public void setScrollables(ArrayList<View> param){scrollables=param;}
-    public void setScrollUp(Button param){scrollUp=param;}
-    public void setScrollDown(Button param){scrollDown=param;}
-    public void setAccept(Button param){accept=param;}
-    public void setReject(Button param){reject=param;}
+    //public void setScrollUp(Button param){scrollUp=param;}
+    //public void setScrollDown(Button param){scrollDown=param;}
+    //public void setAccept(Button param){accept=param;}
+    //public void setReject(Button param){reject=param;}
     public void setIndex(int param){index=param;}
     public void setDisplayCnt(int param){displayCnt=param;}
     public void setXOffset(int param){xOffset=param;}

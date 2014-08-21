@@ -18,7 +18,7 @@ public class Button extends View{
         super();
         title="";
         image=null;
-        index=-100;
+        //index=-100;
         setWidth(50);
         setHeight(20);
     }

@@ -22,7 +22,7 @@ public class GameEntityView extends MajorView{
     public GameEntityView(){
         super();
         current=null;
-        setIndex(0);
+        //setIndex(0);
         setDisplayCnt(4);
         this.setAllowsAccepting(true);
         this.setAllowsScrollables(true);
@@ -231,7 +231,7 @@ public class GameEntityView extends MajorView{
     }
     
     // getter methods
-    public GameEntity getCurrent(){return current;}
+    //public GameEntity getCurrent(){return current;}
     
     // setter methods
     public void setCurrent(GameEntity param){current=param;}

@@ -23,7 +23,7 @@ public class LevelEntitiesView extends MajorView{
         //labels=new ArrayList<>();
         setAllowsScrollables(true);
         setAllowsAccepting(true);
-        setIndex(0);
+        //setIndex(0);
         setDisplayCnt(3);
         setShowing(true);
         setXpos(0);
@@ -116,10 +116,10 @@ public class LevelEntitiesView extends MajorView{
     // getter methods
     public ArrayList<GameEntity> getEntities(){return entities;}
     //public ArrayList<SelectableLabel> getLabels(){return labels;}
-    public int getPrevSize(){return prevSize;}
+    //public int getPrevSize(){return prevSize;}
     
     // setter methods
     public void setEntities(ArrayList<GameEntity> param){entities=param;}
     //public void setLabels(ArrayList<SelectableLabel> param){labels=param;}
-    public void setPrevSize(int param){prevSize=param;}
+    //public void setPrevSize(int param){prevSize=param;}
 }

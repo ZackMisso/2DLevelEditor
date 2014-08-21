@@ -26,7 +26,7 @@ public class AreaView extends MajorView{
         areaController=new AreaController();
         area=null;
         labelCnt=0;
-        setIndex(0);
+        //setIndex(0);
         setDisplayCnt(4);
         setXpos(600);
         setYpos(0);
@@ -108,10 +108,10 @@ public class AreaView extends MajorView{
     // getter methods
     public AreaController getAreaController(){return areaController;}
     public Area getArea(){return area;}
-    public int getLabelCnt(){return labelCnt;}
+    //public int getLabelCnt(){return labelCnt;}
     
     // setter methods
     public void setReference(AreaController param){areaController=param;}
     public void setArea(Area param){area=param;}
-    public void setLabelCnt(int param){labelCnt=param;}
+    //public void setLabelCnt(int param){labelCnt=param;}
 }

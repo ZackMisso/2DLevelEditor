@@ -39,7 +39,7 @@ public class EntityStateView extends MajorView{
         setAllowsScrollables(true);
         setAllowsAccepting(true);
         setShowing(true);
-        setIndex(0);
+        //setIndex(0);
         setDisplayCnt(4);
         initializeDefaults();
     }
@@ -466,13 +466,13 @@ public class EntityStateView extends MajorView{
     
     // getter methods
     public SavedEntityState getCurrent(){return current;}
-    public ArrayList<SelectableLabel> getViewNames(){return viewNames;}
-    public ArrayList<Label> getInputs(){return inputs;}
+    //public ArrayList<SelectableLabel> getViewNames(){return viewNames;}
+    //public ArrayList<Label> getInputs(){return inputs;}
     public String getStateName(){return stateName;}
     
     // setter methods
     public void setCurrent(SavedEntityState param){current=param;}
-    public void setViewNames(ArrayList<SelectableLabel> param){viewNames=param;}
-    public void setInputs(ArrayList<Label> param){inputs=param;}
+    //public void setViewNames(ArrayList<SelectableLabel> param){viewNames=param;}
+    //public void setInputs(ArrayList<Label> param){inputs=param;}
     public void setStateName(String param){stateName=param;}
 }

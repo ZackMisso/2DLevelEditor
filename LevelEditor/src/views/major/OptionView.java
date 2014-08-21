@@ -47,7 +47,7 @@ public class OptionView extends MajorView{
         addEntityState=false;
         removeEntityState=false;
         globalSettings=false;
-        setIndex(0);
+        //setIndex(0);
         setDisplayCnt(4);
         radialCols=1;
         setXpos(600);

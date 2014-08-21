@@ -5,7 +5,7 @@
  * 
  */
 package views;
-import java.awt.Color;
+//import java.awt.Color;
 import views.major.GrandView;
 import views.minor.Button;
 import views.minor.SelectableLabel;

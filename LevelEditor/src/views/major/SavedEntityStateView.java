@@ -26,7 +26,7 @@ public class SavedEntityStateView extends MajorView{
         setWidth(200);
         setHeight(200);
         setShowing(true);
-        setIndex(0);
+        //setIndex(0);
         setDisplayCnt(3);
         initializeDefaults();
     }

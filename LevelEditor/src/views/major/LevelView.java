@@ -114,20 +114,20 @@ public class LevelView extends View{
     // getter methods
     public ArrayList<GameEntity> getEntities(){return entities;}
     public ManualGraphics getManGraphics(){return mans;}
-    public GlobalSettings getSettings(){return settings;}
+    //public GlobalSettings getSettings(){return settings;}
     public int getLevelX(){return levelX;}
     public int getLevelY(){return levelY;}
     public int getLevelWidth(){return levelWidth;}
     public int getLevelHeight(){return levelHeight;}
-    public boolean getSorted(){return sorted;}
+    //public boolean getSorted(){return sorted;}
     
     // setter methods
     public void setEntities(ArrayList<GameEntity> param){entities=param;}
-    public void setManGraphics(ManualGraphics param){mans=param;}
+    //public void setManGraphics(ManualGraphics param){mans=param;}
     public void setSettings(GlobalSettings param){settings=param;}
     public void setLevelX(int param){levelX=param;}
     public void setLevelY(int param){levelY=param;}
-    public void setLevelWidth(int param){levelWidth=param;}
-    public void setLevelHeight(int param){levelHeight=param;}
-    public void setSorted(boolean param){sorted=param;}
+    //public void setLevelWidth(int param){levelWidth=param;}
+    //public void setLevelHeight(int param){levelHeight=param;}
+    //public void setSorted(boolean param){sorted=param;}
 }

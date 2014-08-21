@@ -54,16 +54,16 @@ public class InputController {
     }
     
     // getter methods
-    public GameEntity getSelectedEntity(){return selectedEntity;}
-    public Area getSelectedArea(){return selectedArea;}
-    public EntityState getSelectedState(){return selectedState;}
+    //public GameEntity getSelectedEntity(){return selectedEntity;}
+    //public Area getSelectedArea(){return selectedArea;}
+    //public EntityState getSelectedState(){return selectedState;}
     public View getSelectedView(){return selectedView;}
-    public char getTyped(){return typed;}
+    //public char getTyped(){return typed;}
     
     // setter methods
-    public void setSelectedEntity(GameEntity param){selectedEntity=param;}
-    public void setSelectedArea(Area param){selectedArea=param;}
-    public void setSelectedState(EntityState param){selectedState=param;}
+    //public void setSelectedEntity(GameEntity param){selectedEntity=param;}
+    //public void setSelectedArea(Area param){selectedArea=param;}
+    //public void setSelectedState(EntityState param){selectedState=param;}
     public void setSelectedView(View param){selectedView=param;}
-    public void setTyped(char param){typed=param;}
+    //public void setTyped(char param){typed=param;}
 }

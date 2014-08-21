@@ -44,10 +44,10 @@ public class KeyboardListener implements KeyListener{
 	public boolean isKeyReleased(int key){return !keys[key];}
     
     // getter methods
-    public ProgramThread getThread(){return thread;}
-    public boolean getAccepting(){return accepting;}
+    //public ProgramThread getThread(){return thread;}
+    //public boolean getAccepting(){return accepting;}
     
     // setter methods
     public void setThread(ProgramThread param){thread=param;}
-    public void setAccepting(boolean param){accepting=param;}
+    //public void setAccepting(boolean param){accepting=param;}
 }

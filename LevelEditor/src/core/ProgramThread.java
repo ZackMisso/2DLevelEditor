@@ -21,8 +21,7 @@ public class ProgramThread extends JPanel implements Runnable {
 
     // initializes all of the variables needed for this class
     private void initialize(){
-        grandView=new GrandView();
-        grandView.setThread(this);
+        grandView=new GrandView(this);
         // this will be needed later
     }
     
@@ -86,10 +85,10 @@ public class ProgramThread extends JPanel implements Runnable {
     }
     
     // getter methods
-    public LevelEditor getReference(){return reference;}
-    public GrandView getGrandView(){return grandView;}
+    //public LevelEditor getReference(){return reference;}
+    //public GrandView getGrandView(){return grandView;}
     
     // setter methods
-    public void setReference(LevelEditor param){reference=param;}
-    public void setGrandView(GrandView param){grandView=param;}
+    //public void setReference(LevelEditor param){reference=param;}
+    //public void setGrandView(GrandView param){grandView=param;}
 }

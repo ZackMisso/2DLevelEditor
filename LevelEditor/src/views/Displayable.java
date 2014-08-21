@@ -30,12 +30,12 @@ public abstract class Displayable {
     public int getYpos(){return ypos;}
     public int getWidth(){return width;}
     public int getHeight(){return height;}
-    public float getScale(){return scale;}
+    //public float getScale(){return scale;} // implement later
     
     // setter methods
     public void setXpos(int param){xpos=param;}
     public void setYpos(int param){ypos=param;}
     public void setWidth(int param){width=param;}
     public void setHeight(int param){height=param;}
-    public void setScale(float param){scale=param;}
+    //public void setScale(float param){scale=param;} // implement later
 }

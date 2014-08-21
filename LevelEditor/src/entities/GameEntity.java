@@ -128,17 +128,17 @@ public class GameEntity extends View{
     public Color getColor(){return color;}
     public int getStartX(){return startX;}
     public int getStartY(){return startY;}
-    public int getLevelIndex(){return levelIndex;}
+    //public int getLevelIndex(){return levelIndex;}
     public int getDepth(){return depth;}
     public boolean getIsNew(){return isNew;}
     
     // setter methods
     public void setState(EntityState param){state=param;}
     public void setImage(Image param){image=param;}
-    public void setColor(Color param){color=param;}
+    //public void setColor(Color param){color=param;}
     public void setStartX(int param){startX=param;}
     public void setStartY(int param){startY=param;}
-    public void setLevelIndex(int param){levelIndex=param;}
+    //public void setLevelIndex(int param){levelIndex=param;}
     public void setDepth(int param){depth=param;}
     public void setIsNew(boolean param){isNew=param;}
 }

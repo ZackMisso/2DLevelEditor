@@ -10,7 +10,7 @@ import java.awt.event.MouseListener;
 public class MousepadListener implements MouseListener{
     private ProgramThread thread; // reference to the thread
 	private int mouseX,mouseY; // the coordinates of the mouse
-	private boolean clicked; // if the mouse is being clicked
+	//private boolean clicked; // if the mouse is being clicked
     private boolean accepting;
     
     // TODO :: PASS IN MOUSE INFO TO THE PROGRAM THREAD
@@ -18,7 +18,7 @@ public class MousepadListener implements MouseListener{
 	public MousepadListener(){
         thread=null;
 		mouseX=mouseY=0;
-		clicked=false;
+		//clicked=false;
         accepting=true;
 	}
     
@@ -27,7 +27,7 @@ public class MousepadListener implements MouseListener{
 		if(accepting){
             mouseX=event.getX();
             mouseY=event.getY();
-            clicked=true;
+            //clicked=true;
             thread.handleClick(mouseX,mouseY);
         }
 	}
@@ -51,15 +51,15 @@ public class MousepadListener implements MouseListener{
 
     // reaction if the mouse is released
 	public void mouseReleased(MouseEvent event){
-        if(accepting)
-            clicked=false;
+        //if(accepting)
+            //clicked=false;
 	}
 	
 	// getter methods
-    public ProgramThread getThread(){return thread;}
-	public boolean isMousePressed(){return clicked;}
-	public int getX(){return mouseX;}
-	public int getY(){return mouseY;}
+    //public ProgramThread getThread(){return thread;}
+	//public boolean isMousePressed(){return clicked;}
+	//public int getX(){return mouseX;}
+	//public int getY(){return mouseY;}
     
     // setter methods
     public void setThread(ProgramThread param){thread=param;}

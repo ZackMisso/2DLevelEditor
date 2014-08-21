@@ -137,7 +137,7 @@ public class SavedEntityState{
     }
     
     // getter methods
-    public LevelContainer getReference(){return reference;}
+    //public LevelContainer getReference(){return reference;}
     public ArrayList<String> getInts(){return ints;}
     public ArrayList<String> getBytes(){return bytes;}
     public ArrayList<String> getDoubles(){return doubles;}
@@ -149,7 +149,7 @@ public class SavedEntityState{
     public String getName(){return name;}
     
     // setter methods
-    public void setReference(LevelContainer param){reference=param;}
+    //public void setReference(LevelContainer param){reference=param;}
     public void setInts(ArrayList<String> param){ints=param;}
     public void setBytes(ArrayList<String> param){bytes=param;}
     public void setDoubles(ArrayList<String> param){doubles=param;}
