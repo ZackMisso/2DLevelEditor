@@ -27,7 +27,6 @@ public class EntityState {
     private ArrayList<StringToImage> images;
     private ArrayList<StringToEntity> entities;
     private SavedEntityState reference;
-    // TODO :: FIGURE OUT HOW TO STORE OBJECTS
     
     public EntityState(){ // default constructor
         bytes=new ArrayList<>();
@@ -144,13 +143,5 @@ public class EntityState {
     public SavedEntityState getReference(){return reference;}
     
     // setter methods
-    //public void setBytes(ArrayList<StringToByte> param){bytes=param;}
-    //public void setInts(ArrayList<StringToInt> param){ints=param;}
-    //public void setDoubles(ArrayList<StringToDouble> param){doubles=param;}
-    //public void setBooleans(ArrayList<StringToBool> param){booleans=param;}
-    //public void setStrings(ArrayList<StringToString> param){strings=param;}
-    //public void setColors(ArrayList<StringToColor> param){colors=param;}
-    //public void setImages(ArrayList<StringToImage> param){images=param;}
-    //public void setEntities(ArrayList<StringToEntity> param){entities=param;}
     public void setReference(SavedEntityState param){reference=param;}
 }

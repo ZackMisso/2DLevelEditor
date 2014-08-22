@@ -12,8 +12,6 @@ public interface TemporaryView{
     public void initializeView();
     public void acceptView();
     public void rejectView();
-    //public void scrollUp(); // possibly might need these two in the future
-    //public void scrollDown();
     public void clearView();
     public void setReference(OptionView param);
 }

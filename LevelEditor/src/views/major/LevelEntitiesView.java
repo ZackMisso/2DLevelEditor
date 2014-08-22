@@ -13,19 +13,15 @@ import java.util.ArrayList;
 import java.awt.Color;
 public class LevelEntitiesView extends MajorView{
     private ArrayList<GameEntity> entities;
-    //private ArrayList<SelectableLabel> labels;
     private int prevSize;
     
     // default constructor
     public LevelEntitiesView(){
         super();
         entities=new ArrayList<>();
-        //labels=new ArrayList<>();
         setAllowsScrollables(true);
         setAllowsAccepting(true);
-        //setIndex(0);
         setDisplayCnt(3);
-        setShowing(true);
         setXpos(0);
         setYpos(600);
         setWidth(200);
@@ -89,7 +85,6 @@ public class LevelEntitiesView extends MajorView{
             getSubviews().add(temp);
         }
         refactorLocationsDefault();
-        //System.out.println("Change Test :: LevelEntitiesView");
     }
     
     // handles the clicks on this view
@@ -102,24 +97,19 @@ public class LevelEntitiesView extends MajorView{
     // handles the types on this view
     public void types(char c){
         super.types(c);
-        // implement
+        // implement shortcuts
     }
     
     // draws this views private variables to the screen
     public void paint(Graphics g){
         g.setColor(Color.GRAY);
         g.fillRect(getXpos(),getYpos(),getWidth(),getHeight());
-        // implement more if needed
         super.paint(g);
     }
     
     // getter methods
     public ArrayList<GameEntity> getEntities(){return entities;}
-    //public ArrayList<SelectableLabel> getLabels(){return labels;}
-    //public int getPrevSize(){return prevSize;}
     
     // setter methods
     public void setEntities(ArrayList<GameEntity> param){entities=param;}
-    //public void setLabels(ArrayList<SelectableLabel> param){labels=param;}
-    //public void setPrevSize(int param){prevSize=param;}
 }

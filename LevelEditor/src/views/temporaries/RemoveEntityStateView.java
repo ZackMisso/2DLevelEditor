@@ -67,12 +67,7 @@ public class RemoveEntityStateView implements TemporaryView{
     public void rejectView(){
         clearView();
     }
-
-    // getter methods
-    public OptionView getReference(){return reference;}
-    public Label getTitle(){return title;}
     
     @Override // setter methods
     public void setReference(OptionView param){reference=param;}
-    public void setTitle(Label param){title=param;}
 }

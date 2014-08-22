@@ -18,8 +18,8 @@ public abstract class MajorView extends View{
     private boolean allowsAccepting; // probably dont need this
     private int index;
     private int displayCnt;
-    private int xOffset;
-    private int yOffset;
+    private int xOffset; // x distance used for aligning scrollables
+    private int yOffset; // y distance used for aligning scrollables
 
     public MajorView(){
         super();
@@ -51,6 +51,7 @@ public abstract class MajorView extends View{
         }
     }
     
+    // sets the locations of the objects in scrollables
     public void refactorLocationsDefault(){
         int tempX=getXpos()+10+xOffset;
         int tempY=getYpos()+20+yOffset;
@@ -66,11 +67,13 @@ public abstract class MajorView extends View{
         }
     }
     
+    // clears the views in scrollables and removes them from the subviews
     public void clearScrollables(){
         for(int i=0;i<scrollables.size();i++)
             getSubviews().remove(scrollables.remove(i--));
     }
     
+    // checks for button presses
     public void update(){
         int num=buttonSelected();
         if(scrollUp!=null&&scrollUp.getIndex()==num)
@@ -83,6 +86,7 @@ public abstract class MajorView extends View{
             remove();
     }
     
+    // reactions to button presses
     public abstract void scrollUp();
     public abstract void scrollDown();
     public abstract void add();
@@ -127,15 +131,9 @@ public abstract class MajorView extends View{
     public int getDisplayCnt(){return displayCnt;}
     public int getXOffset(){return xOffset;}
     public int getYOffset(){return yOffset;}
-    //public boolean getAllowsScrollables(){return allowsScrollables;}
-    //public boolean getAllowsAccepting(){return allowsAccepting;}
     
     // setter methods
     public void setScrollables(ArrayList<View> param){scrollables=param;}
-    //public void setScrollUp(Button param){scrollUp=param;}
-    //public void setScrollDown(Button param){scrollDown=param;}
-    //public void setAccept(Button param){accept=param;}
-    //public void setReject(Button param){reject=param;}
     public void setIndex(int param){index=param;}
     public void setDisplayCnt(int param){displayCnt=param;}
     public void setXOffset(int param){xOffset=param;}

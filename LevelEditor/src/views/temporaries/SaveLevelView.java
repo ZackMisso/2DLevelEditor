@@ -1,6 +1,6 @@
 /**
  *
- * @author Zack Misso
+ * @author Zackary Misso
  * This contains the logic for a temporary view that loads the desired level
  * 
  */
@@ -32,9 +32,6 @@ public class SaveLevelView implements TemporaryView{
         // implement
         clearView();
     }
-    
-    // getter methods
-    public OptionView getReference(){return reference;}
     
     // setter methods
     public void setReference(OptionView param){reference=param;}

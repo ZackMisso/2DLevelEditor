@@ -22,7 +22,6 @@ public class GameEntityView extends MajorView{
     public GameEntityView(){
         super();
         current=null;
-        //setIndex(0);
         setDisplayCnt(4);
         this.setAllowsAccepting(true);
         this.setAllowsScrollables(true);
@@ -31,7 +30,6 @@ public class GameEntityView extends MajorView{
         setWidth(200);
         setHeight(200);
         setXOffset(20);
-        setShowing(true);
         initializeDefaults();
     }
     
@@ -229,9 +227,6 @@ public class GameEntityView extends MajorView{
         g.fillRect(getXpos(),getYpos(),getWidth(),getHeight());
         super.paint(g);
     }
-    
-    // getter methods
-    //public GameEntity getCurrent(){return current;}
     
     // setter methods
     public void setCurrent(GameEntity param){current=param;}

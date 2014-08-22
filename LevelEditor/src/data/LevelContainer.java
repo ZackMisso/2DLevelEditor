@@ -4,6 +4,7 @@
  * This class will store all of the level's data while editing it
  * The difference between this class and the Area class is that this class will
  * contain the temporary changes before they are saved.
+ * TO BE IMPLEMENTED
  * 
  */
 package data;

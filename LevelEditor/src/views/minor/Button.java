@@ -18,7 +18,6 @@ public class Button extends View{
         super();
         title="";
         image=null;
-        //index=-100;
         setWidth(50);
         setHeight(20);
     }
@@ -37,11 +36,6 @@ public class Button extends View{
     
     // what happens when the button is typed
     public void types(char c){
-        // implement
-    }
-
-    // custom selection handling
-    public void customFalsify(){
         // implement
     }
     

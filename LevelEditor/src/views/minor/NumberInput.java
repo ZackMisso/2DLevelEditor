@@ -15,8 +15,6 @@ public class NumberInput extends View{
     private boolean hasTitle;
     private boolean repInt;
     private boolean repByte;
-
-    // TODO :: FIGURE OUT HOW TO INCORPORATE NEGATIVES
     
     // default constructor
     public NumberInput(){
@@ -84,11 +82,6 @@ public class NumberInput extends View{
         }
     }
 
-    // custom selection handling
-    public void customFalsify(){
-        // delete this
-    }
-
     // gets the contents as an int
     public int getContentsAsInt(){
         return Integer.parseInt(contents);
@@ -128,6 +121,4 @@ public class NumberInput extends View{
     public void setTitle(String param){title=param;}
     public void setDigits(int param){digits=param;}
     public void setHasTitle(boolean param){hasTitle=param;}
-    public void setRepInt(boolean param){repInt=param;}
-    public void setRepByte(boolean param){repByte=param;}
 }

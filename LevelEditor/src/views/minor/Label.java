@@ -14,7 +14,6 @@ public class Label extends View{
     public Label(){
         super();
         text="";
-        setShowing(true);
     }
     
     // handles clicks
@@ -25,11 +24,6 @@ public class Label extends View{
     // handles types
     public void types(char c){
         // does nothing
-    }
-
-    // custom selection handling
-    public void customFalsify(){
-        // implement
     }
     
     // draws the text to the screen

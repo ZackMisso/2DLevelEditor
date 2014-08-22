@@ -16,13 +16,7 @@ public class ProgramThread extends JPanel implements Runnable {
     public ProgramThread(LevelEditor param){
         reference=param;
         setIgnoreRepaint(true);
-        initialize();
-    }
-
-    // initializes all of the variables needed for this class
-    private void initialize(){
         grandView=new GrandView(this);
-        // this will be needed later
     }
     
     // updates everything every iteration of the run loop
@@ -37,7 +31,6 @@ public class ProgramThread extends JPanel implements Runnable {
         grandView.paint(g2);
         g.drawImage(backBuffer, 0, 0, reference.getWindow());
         g2.dispose();
-        //pokemon.paint(g);
     }
     
     // handles logic when there is a click
@@ -83,12 +76,4 @@ public class ProgramThread extends JPanel implements Runnable {
         }
         repaint();
     }
-    
-    // getter methods
-    //public LevelEditor getReference(){return reference;}
-    //public GrandView getGrandView(){return grandView;}
-    
-    // setter methods
-    //public void setReference(LevelEditor param){reference=param;}
-    //public void setGrandView(GrandView param){grandView=param;}
 }

@@ -5,28 +5,20 @@
  * 
  */
 package views.major;
-import views.View;
 import views.MajorView;
 import views.TemporaryView;
 import views.minor.TextBox;
 import views.minor.RadialButton;
-//import views.minor.SelectableLabel;
-//import views.minor.Label;
 import views.temporaries.AddEntityStateView;
 import views.temporaries.AddEntityStateObjectView;
 import views.temporaries.GlobalSettingsView;
 import views.temporaries.RemoveEntityStateView;
 import views.temporaries.RemoveEntityStateObjectView;
-//import entities.SavedEntityState;
-//import java.util.ArrayList;
 import java.awt.Graphics;
 import java.awt.Color;
 public class OptionView extends MajorView{
-    //private View container; // what this view is containing
     private TemporaryView temporary;
-    //private ArrayList<View> temporaries;
     private Object referenceObject; // will depend on the type of view
-    //private TextBox askName; // allows the user to input a name for something
     private int radialCols;
     private boolean addEntityStateObj;
     private boolean removeEntityStateObj;
@@ -37,24 +29,19 @@ public class OptionView extends MajorView{
     // default constructor
     public OptionView(){
         super();
-        //container=null;
         temporary=null;
-        //temporaries=new ArrayList<>();
         referenceObject=null;
-        //askName=null;
         addEntityStateObj=false;
         removeEntityStateObj=false;
         addEntityState=false;
         removeEntityState=false;
         globalSettings=false;
-        //setIndex(0);
         setDisplayCnt(4);
         radialCols=1;
         setXpos(600);
         setYpos(300);
         setWidth(200);
         setHeight(300);
-        setShowing(true);
         setAllowsScrollables(true);
         setAllowsAccepting(true);
         initializeDefaults();
@@ -78,22 +65,20 @@ public class OptionView extends MajorView{
         }
     }
     
-    @Override
-    public void add(){acceptCurrentView();}
-    @Override
-    public void remove(){rejectCurrentView();}
+    @Override public void add(){acceptCurrentView();}
+    @Override public void remove(){rejectCurrentView();}
     
     // checks and does the accepting functionality for the current view
     private void acceptCurrentView(){
-        // implement button modifier logic
+        // TODO :: this can be reduced
         if(addEntityStateObj)
-            temporary.acceptView();//acceptAddEntityStateObj();
+            temporary.acceptView();
         if(removeEntityStateObj)
             temporary.acceptView();
         if(addEntityState)
-            temporary.acceptView();//acceptAddEntityState();
+            temporary.acceptView();
         if(removeEntityState)
-            temporary.acceptView();//acceptRemoveEntityState();
+            temporary.acceptView();
         if(globalSettings)
             temporary.acceptView();
         getAccept().setSelected(false);
@@ -196,10 +181,11 @@ public class OptionView extends MajorView{
     }
     
     // draws this views private variables to the screen
-    @Override public void paint(Graphics g){
+    public void paint(Graphics g){
         g.setColor(Color.pink);
         g.fillRect(getXpos(),getYpos(),getWidth(),getHeight());
-        super.paint(g); // maybe not need
+        //System.out.println("OMG");
+        super.paint(g);
     }
     
     // getter methods

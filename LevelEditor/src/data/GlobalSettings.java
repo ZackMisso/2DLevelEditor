@@ -6,16 +6,17 @@
  */
 package data;
 public class GlobalSettings {
-    private int tileSize;
-    private boolean grid;
-    private boolean tiled;
+    private int tileSize; // the length of a side of a cell in px.
+    private boolean grid; // if the level editor is displaying the grid
+    private boolean tiled; // if the game runs on tile physics (to be implemented)
     
-    public GlobalSettings(){
+    public GlobalSettings(){ // default constructor
         tileSize=0;
         grid=false;
         tiled=false;
     }
     
+    // turn on tile physics implementation (to be finished)
     public void turnOnTiled(int size){
         tileSize=size;
         grid=true;
@@ -25,6 +26,7 @@ public class GlobalSettings {
             turnOffTiled();
     }
     
+    // turn off tile physics implementation
     public void turnOffTiled(){
         tileSize=0;
         grid=false;

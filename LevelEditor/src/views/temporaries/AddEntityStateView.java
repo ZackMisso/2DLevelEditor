@@ -27,7 +27,6 @@ public class AddEntityStateView implements TemporaryView{
         askName.setYpos(ypos+270);
         askName.setSuperview(reference);
         reference.getSubviews().add(askName);
-        //getSubviews().add(askName);
     }
     
     @Override // clears the view
@@ -57,12 +56,7 @@ public class AddEntityStateView implements TemporaryView{
     public void rejectView(){
         clearView();
     }
-    
-    // getter methods
-    public OptionView getReference(){return reference;}
-    public TextBox getAskName(){return askName;}
-    
+
     // setter methods
     @Override public void setReference(OptionView param){reference=param;}
-    public void setAskName(TextBox param){askName=param;}
 }

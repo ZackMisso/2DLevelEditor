@@ -4,6 +4,7 @@
  * This class is a hack to skip over the search for an
  * image to represent units. This will need to be fixed
  * for implementation with future projects
+ * THIS WILL NOT BE USED IN FINAL PROJECT
  * 
  */
 package data;

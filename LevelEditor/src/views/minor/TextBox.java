@@ -62,11 +62,6 @@ public class TextBox extends View{
         else if(c==8&&contents.length()>0)
             contents=contents.substring(0,contents.length()-1);
     }
-
-    // custom selection handling
-    public void customFalsify(){
-        // delete this
-    }
     
     // draws the TextBox to the screen
     public void paint(Graphics g){

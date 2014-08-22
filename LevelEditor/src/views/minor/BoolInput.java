@@ -40,11 +40,6 @@ public class BoolInput extends View{
         // implement more as needed
     }
 
-    // DELETE THIS
-    public void customFalsify(){
-    	// delete this
-    }
-
     public void paint(Graphics g){
     	int x=getXpos();
     	g.setColor(Color.black);
@@ -62,7 +57,6 @@ public class BoolInput extends View{
     // getter methods
     public String getTitle(){return title;}
     public boolean getContents(){return contents;}
-    //public boolean getHasTitle(){return hasTitle;}
 
     // setter methods
     public void setTitle(String param){title=param;}

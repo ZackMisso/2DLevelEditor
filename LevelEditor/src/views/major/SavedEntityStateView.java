@@ -25,8 +25,6 @@ public class SavedEntityStateView extends MajorView{
         setYpos(600);
         setWidth(200);
         setHeight(200);
-        setShowing(true);
-        //setIndex(0);
         setDisplayCnt(3);
         initializeDefaults();
     }
@@ -70,19 +68,6 @@ public class SavedEntityStateView extends MajorView{
                 else
                     System.out.println("Minor Error :: OptionView open :: SavedEntityStateView");
             }
-        }else{ // DELETE THIS IT IS NOT NEEDED
-            if(temp!=null&&!temp.getAddEntityStateObj()&&false){ // WORK ON THIS
-                // this is temporarily not going to be available
-                System.out.println("Adding Saved Entity State Obj");
-                temp.clearBools();
-                temp.setAddEntityStateObj(true);
-                temp.setReferenceObject(selected);
-                temp.checkInitialization();
-                //implement more possibly
-            }else{
-                System.out.println("Major Error :: OptionView null 2 :: SavedEntityStateView");
-                
-            }
         }
         getAccept().setSelected(false);
     }
@@ -118,7 +103,6 @@ public class SavedEntityStateView extends MajorView{
             if(getScrollables().get(i).getSelected())
                 return ((SelectableLabel)getScrollables().get(i)).getSavedEntityState();
         return null;
-        // TODO :: ACTUALLY USE THIS IN THIS CLASS
     }
     
     // this method recreates the list of labels (very inefficient)

@@ -1,6 +1,7 @@
 /**
  *
- * @author Zack Misso
+ * @author Zackary Misso
+ * This class represents a view that allows the user to change the global settings
  */
 package views.temporaries;
 import views.TemporaryView;
@@ -57,12 +58,7 @@ public class GlobalSettingsView implements TemporaryView{
     public void rejectView(){
         clearView();
     }
-    
-    // getter methods
-    public OptionView getReference(){return reference;}
-    public GlobalSettings getSettings(){return settings;}
-    
-    @Override // setter methods
-    public void setReference(OptionView param){reference=param;}
-    public void setSettings(GlobalSettings param){settings=param;}
+
+    // setter methods
+    @Override public void setReference(OptionView param){reference=param;}
 }

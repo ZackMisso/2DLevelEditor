@@ -6,7 +6,6 @@
  */
 package views.minor;
 import views.View;
-import views.MajorView;
 import views.major.GrandView;
 import views.major.EntityStateView;
 import entities.SavedEntityState;
@@ -49,12 +48,10 @@ public class SelectableLabel extends View{
     
     // handles the clicks on this view
     public void clicked(){
-        //subviewFalsify();
         System.out.println("SELECTED==true");
         if(getSuperview()!=null){
             getSuperview().labelFalsify();
             setSelected(true);
-            //InputController input=((PokemonEditorGrandView)getSuperview().getSuperview()).getInputs();
             if(repArea){
                 // implement
             }
@@ -72,8 +69,6 @@ public class SelectableLabel extends View{
                     esv.setCurrent((SavedEntityState)reference);
                     esv.redrawView();
                     System.out.println(getSelected());
-                    //if(!getSelected())
-                    //    System.out.println("wat");
                 }else{
                     System.out.println("Major Error :: Superview Null :: SelectableLabel");
                 }
@@ -183,16 +178,6 @@ public class SelectableLabel extends View{
     public Object getReference(){return reference;}
     public String getText(){return text;}
     public int getIndex(){return index;}
-    public boolean getRepArea(){return repArea;}
-    public boolean getRepEntity(){return repEntity;}
-    public boolean getRepSavedEntity(){return repSavedEntity;}
-    public boolean getRepStrBool(){return repStrBool;}
-    public boolean getRepStrByte(){return repStrByte;}
-    public boolean getRepStrDou(){return repStrDou;}
-    public boolean getRepStrInt(){return repStrInt;}
-    public boolean getRepStrStr(){return repStrStr;}
-    public boolean getRepStrCol(){return repStrCol;}
-    public boolean getRepStrImg(){return repStrImg;}
     
     // setter methods
     public void setReference(Object param){reference=param;}

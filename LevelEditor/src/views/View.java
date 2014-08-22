@@ -5,7 +5,6 @@
  * 
  */
 package views;
-//import java.awt.Color;
 import views.major.GrandView;
 import views.minor.Button;
 import views.minor.SelectableLabel;
@@ -19,7 +18,6 @@ import java.awt.Rectangle;
 public abstract class View extends Displayable{
     private ArrayList<View> subviews;
     private View superview;
-    private boolean showing;
     private boolean selected;
     
     public View(){ // default constructor
@@ -30,7 +28,6 @@ public abstract class View extends Displayable{
         super(x,y,w,h);
         subviews=new ArrayList<>();
         superview=null;
-        showing=false;
         selected=false;
     }
     
@@ -42,12 +39,8 @@ public abstract class View extends Displayable{
     
     // if the view is being displayed, draw it and its subviews on the screen
     public void paint(Graphics g){
-        if(showing){
-            //g.setColor(Color.black);
-            //g.drawRect(getXpos(),getYpos(),getWidth(),getHeight());
-            for(int i=0;i<subviews.size();i++)
-                subviews.get(i).paint(g);
-        }
+        for(int i=0;i<subviews.size();i++)
+            subviews.get(i).paint(g);
     }
     
     // adds a view as a subview of this view
@@ -150,6 +143,7 @@ public abstract class View extends Displayable{
                 subviews.get(i).setSelected(false);
     }
 
+    // sets all subviews that are color inputs selected values to false
     public void colorInputFalsify(){
         for(int i=0;i<subviews.size();i++)
             if(subviews.get(i)instanceof ColorInput)
@@ -175,6 +169,7 @@ public abstract class View extends Displayable{
         return button;
     }
     
+    // adds a single radial button to this view with the parameters
     public RadialButton makeRadial(int ind,int w,int h,View sup,String text){
         RadialButton button=new RadialButton();
         button.setWidth(w);
@@ -186,25 +181,19 @@ public abstract class View extends Displayable{
         return button;
     }
     
-    // TODO :: POSSIBLY ADD MORE METHODS LIKE THE ONES ABOVE
-    
     // what happens when the view is clicked
     public abstract void clicked();
     
     // what happens when the user types
     public abstract void types(char c);
     
-    // MAYBE MAKE A TYPE METHOD FOR NUMBERS AND ONE FOR TEXT
-    
     // getter methods
     public ArrayList<View> getSubviews(){return subviews;}
     public View getSuperview(){return superview;}
-    public boolean getShowing(){return showing;}
     public boolean getSelected(){return selected;}
     
     // setter methods
     public void setSubviews(ArrayList<View> param){subviews=param;}
     public void setSuperview(View param){superview=param;}
-    public void setShowing(boolean param){showing=param;}
     public void setSelected(boolean param){selected=param;}
 }

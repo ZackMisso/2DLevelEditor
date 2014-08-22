@@ -2,6 +2,7 @@
  *
  * @author Zackary Misso
  * This class implements the logic for an area (level in a game)
+ * TO BE IMPLEMENTED
  * 
  */
 package data;

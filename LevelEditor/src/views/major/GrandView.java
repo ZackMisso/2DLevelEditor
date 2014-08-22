@@ -36,7 +36,6 @@ public class GrandView extends View{
     // the default constructor
     public GrandView(ProgramThread param){
         super();
-        //levels=new LevelContainer(); // maybe a thing
         thread=param;
         configs=new ArrayList<>();
         setXpos(0);
@@ -49,7 +48,6 @@ public class GrandView extends View{
         writer=new WorldWriter(this);
         initializeViews(); // initializes subviews
         readDataFromFile(); // reads past data from the saved file
-        setShowing(true);
     }
     
     // initializes all of the subviews for this view
@@ -96,7 +94,6 @@ public class GrandView extends View{
         options=new OptionView();
         options.setSuperview(this);
         getSubviews().add(options);
-        
         levelEntities.setEntities(level.getEntities());
     }
     
@@ -107,7 +104,6 @@ public class GrandView extends View{
     
     // handles the clicks from the user
     @Override public void clicked(){
-        System.out.println("Grand View was clicked");
         // impleemnt
     }
     
@@ -137,18 +133,5 @@ public class GrandView extends View{
     public WorldWriter getWriter(){return writer;}
     
     // setter methods
-    //public void setThread(ProgramThread param){thread=param;}
-    //public void setInputs(InputController param){inputs=param;}
     public void setConfigs(ArrayList<SavedEntityState> param){configs=param;}
-    //public void setLevel(LevelView param){level=param;}
-    //public void setAreas(AreaView param){areas=param;}
-    //public void setEntityState(EntityStateView param){entityState=param;}
-    //public void setGameEntity(GameEntityView param){gameEntity=param;}
-    //public void setLevelEntities(LevelEntitiesView param){levelEntities=param;}
-    //public void setSavedStates(SavedEntityStateView param){savedStates=param;}
-    //public void setModifiers(ModifiersView param){modifiers=param;}
-    //public void setOptions(OptionView param){options=param;}
-    //public void setSettings(GlobalSettings param){settings=param;}
-    //public void setWorldReader(WorldReader param){reader=param;}
-    //public void setWorldWriter(WorldWriter param){writer=param;}
 }

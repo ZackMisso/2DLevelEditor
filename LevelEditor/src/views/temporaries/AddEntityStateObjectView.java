@@ -64,49 +64,42 @@ public class AddEntityStateObjectView implements TemporaryView{
             GrandView superview=reference.findGrandView();
             if(selected.getText().equals("Bool")){
                 System.out.println("Adding To Entity :: Bool :: OptionView");
-                //SavedEntityState state=(SavedEntityState)referenceObject;
                 state.getBooleans().add(name);
                 // implement more if needed
                 // Will need to add to all game entities
             }
             if(selected.getText().equals("Byte")){
                 System.out.println("Adding To Entity :: Byte :: OptionView");
-                //SavedEntityState state=(SavedEntityState)referenceObject;
                 state.getBytes().add(name);
                 // implement more if needed
                 // Will need to add to all game entities
             }
             if(selected.getText().equals("Color")){
                 System.out.println("Adding To Entity :: Color :: OptionView");
-                //SavedEntityState state=(SavedEntityState)referenceObject;
                 state.getColors().add(name);
                 // implement more if needed
                 // Will need to add to all game entities
             }
             if(selected.getText().equals("Double")){
                 System.out.println("Adding To Entity :: Double :: OptionView");
-                //SavedEntityState state=(SavedEntityState)referenceObject;
                 state.getDoubles().add(name);
                 // implement more if needed
                 // Will need to add to all game entities
             }
             if(selected.getText().equals("Image")){
                 System.out.println("Adding To Entity :: Image :: OptionView");
-                //SavedEntityState state=(SavedEntityState)referenceObject;
                 state.getImages().add(name);
                 // implement more if needed
                 // Will need to add to all game entities
             }
             if(selected.getText().equals("Int")){
                 System.out.println("Adding To Entity :: Int :: OptionView");
-                //SavedEntityState state=(SavedEntityState)referenceObject;
                 state.getInts().add(name);
                 // implement more if needed
                 // Will need to add to all game entities
             }
             if(selected.getText().equals("String")){
                 System.out.println("Adding To Entity :: String :: OptionView");
-                //SavedEntityState state=(SavedEntityState)referenceObject;
                 state.getStrings().add(name);
                 // implement more if needed
                 // Will need to add to all game entities
@@ -128,11 +121,6 @@ public class AddEntityStateObjectView implements TemporaryView{
         clearView();
     }
     
-    // getter methods
-    public OptionView getReference(){return reference;}
-    public TextBox getAskName(){return askName;}
-    
     // setter methods
     @Override public void setReference(OptionView param){reference=param;}
-    public void setAskName(TextBox param){askName=param;}
 }

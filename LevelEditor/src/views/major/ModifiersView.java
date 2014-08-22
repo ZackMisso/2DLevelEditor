@@ -13,14 +13,12 @@ import io.WorldWriter;
 import java.awt.Graphics;
 import java.awt.Color;
 public class ModifiersView extends View{
-    // TODO :: LEARN HOW TO OPEN OTHER PROJECTS
     // default constructor
     public ModifiersView(){
         setXpos(0);
         setYpos(568);
         setWidth(600);
         setHeight(32);
-        setShowing(true);
         initializeSubviews();
     }
     

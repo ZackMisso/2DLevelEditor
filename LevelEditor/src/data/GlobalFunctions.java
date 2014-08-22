@@ -4,6 +4,7 @@
  * This class contains some static functions that can be used to easily edit
  * datastructures throughout the entire project. NOTE :: Not all of these will
  * be used for every project
+ * // TO BE IMPLEMENTED
  * 
  */
 package data;
@@ -125,6 +126,7 @@ public class GlobalFunctions {
         }
     }
     
+    // removes the specified bool from all entities in all current projects
     public static void removeBoolToAllEntities(String name,GrandView reference){
         ArrayList<GameEntity> entities=reference.getLevel().getEntities();
         ArrayList<SavedEntityState> saved=reference.getConfigs();
@@ -138,6 +140,7 @@ public class GlobalFunctions {
         }
     }
     
+    // removes the specified byte from all entities in all current projects
     public static void removeByteToAllEntities(String name,GrandView reference){
         ArrayList<GameEntity> entities=reference.getLevel().getEntities();
         ArrayList<SavedEntityState> saved=reference.getConfigs();
@@ -151,6 +154,7 @@ public class GlobalFunctions {
         }
     }
     
+    // removes the specified color from all entities in all current projects
     public static void removeColorToAllEntities(String name,GrandView reference){
         ArrayList<GameEntity> entities=reference.getLevel().getEntities();
         ArrayList<SavedEntityState> saved=reference.getConfigs();
@@ -164,6 +168,7 @@ public class GlobalFunctions {
         }
     }
     
+    // removes the specified double from all entities in all current projects
     public static void removeDoubleToAllEntities(String name,GrandView reference){
         ArrayList<GameEntity> entities=reference.getLevel().getEntities();
         ArrayList<SavedEntityState> saved=reference.getConfigs();
@@ -177,6 +182,7 @@ public class GlobalFunctions {
         }
     }
     
+    // removes the specified entity from all entities in all current projects
     public static void removeEntityToAllEntities(String name,GrandView reference){
         ArrayList<GameEntity> entities=reference.getLevel().getEntities();
         ArrayList<SavedEntityState> saved=reference.getConfigs();
@@ -190,6 +196,7 @@ public class GlobalFunctions {
         }
     }
     
+    // removes the specified image from all entities in all current projects
     public static void removeImageToAllEntities(String name,GrandView reference){
         ArrayList<GameEntity> entities=reference.getLevel().getEntities();
         ArrayList<SavedEntityState> saved=reference.getConfigs();
@@ -203,6 +210,7 @@ public class GlobalFunctions {
         }
     }
     
+    // removes the specified int from all entities in all current projects
     public static void removeIntToAllEntities(String name,GrandView reference){
         ArrayList<GameEntity> entities=reference.getLevel().getEntities();
         ArrayList<SavedEntityState> saved=reference.getConfigs();
@@ -216,6 +224,7 @@ public class GlobalFunctions {
         }
     }
     
+    // removes the specified string from all entities in all current projects
     public static void removeStringToAllEntities(String name,GrandView reference){
         ArrayList<GameEntity> entities=reference.getLevel().getEntities();
         ArrayList<SavedEntityState> saved=reference.getConfigs();

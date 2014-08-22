@@ -21,7 +21,6 @@ public class GameEntity extends View{
     private Color color; // draws this until the image functionality is in place
     private int startX;
     private int startY;
-    private int levelIndex; // the index of the entity in the level list of entities
     private int depth; // only applies to level editor
     private boolean isNew;
     
@@ -34,7 +33,6 @@ public class GameEntity extends View{
         startY=-100;
         setWidth(12); // default for mario
         setHeight(16); // default for mario
-        levelIndex=-100;
         depth=-100;
         isNew=true;
     }
@@ -55,7 +53,7 @@ public class GameEntity extends View{
     
     // handles typed input
     public void types(char c){
-        // I do not know how we should implement this yet
+        // implement shortcuts
     }
 
     // checks the EntityState for an image or color
@@ -128,17 +126,14 @@ public class GameEntity extends View{
     public Color getColor(){return color;}
     public int getStartX(){return startX;}
     public int getStartY(){return startY;}
-    //public int getLevelIndex(){return levelIndex;}
     public int getDepth(){return depth;}
     public boolean getIsNew(){return isNew;}
     
     // setter methods
     public void setState(EntityState param){state=param;}
     public void setImage(Image param){image=param;}
-    //public void setColor(Color param){color=param;}
     public void setStartX(int param){startX=param;}
     public void setStartY(int param){startY=param;}
-    //public void setLevelIndex(int param){levelIndex=param;}
     public void setDepth(int param){depth=param;}
     public void setIsNew(boolean param){isNew=param;}
 }

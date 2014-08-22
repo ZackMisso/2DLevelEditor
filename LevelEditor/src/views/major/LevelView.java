@@ -13,7 +13,6 @@ import java.awt.Color;
 import java.util.ArrayList;
 import java.awt.Graphics;
 public class LevelView extends View{
-    // this class will contain all of the entities
     private ArrayList<GameEntity> entities;
     private ManualGraphics mans;
     private GlobalSettings settings;
@@ -36,7 +35,6 @@ public class LevelView extends View{
         setHeight(568);
         levelWidth=getWidth();
         levelHeight=getHeight();
-        setShowing(true);
     }
     
     // handles the clicks
@@ -89,9 +87,8 @@ public class LevelView extends View{
     }
     
     // sorts the game entity list based on user defined depth
+    // TODO :: NOT FINISHED, REWRITE AS A MERGE SORT
     private void sortByDepth(){
-        // TODO :: TEST THIS!!!!
-        // THIS WILL NOT BE NEEDED FOR SOME APPLICATIONS (MAINLY MY CURRENT ONE)
         for(int i=1;i<entities.size();i++){
             int j=i;
             int k=j-1;
@@ -114,20 +111,14 @@ public class LevelView extends View{
     // getter methods
     public ArrayList<GameEntity> getEntities(){return entities;}
     public ManualGraphics getManGraphics(){return mans;}
-    //public GlobalSettings getSettings(){return settings;}
     public int getLevelX(){return levelX;}
     public int getLevelY(){return levelY;}
     public int getLevelWidth(){return levelWidth;}
     public int getLevelHeight(){return levelHeight;}
-    //public boolean getSorted(){return sorted;}
     
     // setter methods
     public void setEntities(ArrayList<GameEntity> param){entities=param;}
-    //public void setManGraphics(ManualGraphics param){mans=param;}
     public void setSettings(GlobalSettings param){settings=param;}
     public void setLevelX(int param){levelX=param;}
     public void setLevelY(int param){levelY=param;}
-    //public void setLevelWidth(int param){levelWidth=param;}
-    //public void setLevelHeight(int param){levelHeight=param;}
-    //public void setSorted(boolean param){sorted=param;}
 }

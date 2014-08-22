@@ -38,8 +38,6 @@ public class EntityStateView extends MajorView{
         setHeight(200);
         setAllowsScrollables(true);
         setAllowsAccepting(true);
-        setShowing(true);
-        //setIndex(0);
         setDisplayCnt(4);
         initializeDefaults();
     }
@@ -79,8 +77,6 @@ public class EntityStateView extends MajorView{
             getSubviews().remove(inputs.remove(i--));
         // implement more if needed
     }
-
-    // TODO :: REDUCE THE SIZE OF THIS CODE!!!
 
     // creates the selectable label and label for all of the bytes
     private int createByteLabels(ArrayList<String> list,int y,int lx,int slx){
@@ -466,13 +462,9 @@ public class EntityStateView extends MajorView{
     
     // getter methods
     public SavedEntityState getCurrent(){return current;}
-    //public ArrayList<SelectableLabel> getViewNames(){return viewNames;}
-    //public ArrayList<Label> getInputs(){return inputs;}
     public String getStateName(){return stateName;}
     
     // setter methods
     public void setCurrent(SavedEntityState param){current=param;}
-    //public void setViewNames(ArrayList<SelectableLabel> param){viewNames=param;}
-    //public void setInputs(ArrayList<Label> param){inputs=param;}
     public void setStateName(String param){stateName=param;}
 }

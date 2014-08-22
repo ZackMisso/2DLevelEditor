@@ -21,9 +21,6 @@ public class SavedEntityState{
     private ArrayList<String> images; // to be implemented
     private ArrayList<String> entities;
     private String name;
-    private boolean selected; // this is not needed
-    
-    // WILL NEED TO FIGURE OUT HOW TO ADD OBJECTS TO THIS LIST
     
     public SavedEntityState(){
         this(null);
@@ -40,7 +37,6 @@ public class SavedEntityState{
         bytes=new ArrayList<>();
         entities=new ArrayList<>();
         name="";
-        selected=false; //?????
     }
 
     // creates the initial setup for the Saved Entity State
@@ -137,7 +133,6 @@ public class SavedEntityState{
     }
     
     // getter methods
-    //public LevelContainer getReference(){return reference;}
     public ArrayList<String> getInts(){return ints;}
     public ArrayList<String> getBytes(){return bytes;}
     public ArrayList<String> getDoubles(){return doubles;}
@@ -149,7 +144,6 @@ public class SavedEntityState{
     public String getName(){return name;}
     
     // setter methods
-    //public void setReference(LevelContainer param){reference=param;}
     public void setInts(ArrayList<String> param){ints=param;}
     public void setBytes(ArrayList<String> param){bytes=param;}
     public void setDoubles(ArrayList<String> param){doubles=param;}

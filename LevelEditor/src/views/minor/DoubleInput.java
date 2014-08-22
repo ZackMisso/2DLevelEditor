@@ -39,7 +39,6 @@ public class DoubleInput extends View{
     }
     
     // getter methods
-    
     public NumberInput getWholeNumber(){return wholeNumber;}
     public NumberInput getDecimalNumber(){return decimalNumber;}
     public String getTitle(){return title;}
