@@ -288,6 +288,8 @@ public class EntityStateView extends MajorView{
         getScrollDown().setSelected(false);
     }
     
+    // TODO :: remove getAddEntityStateObj dependency
+    
     // tells the level editor to pull up the add entity state obj screen in the
     // options view
     public void add(){

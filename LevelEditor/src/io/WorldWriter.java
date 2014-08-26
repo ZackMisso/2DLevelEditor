@@ -18,6 +18,10 @@ import java.io.FileWriter;
 public class WorldWriter{
     private GrandView reference;
     
+    public WorldWriter(){ // constructor used for unit tests
+        reference=null;
+    }
+    
     public WorldWriter(GrandView param){ // default constructor
         reference=param;
     }

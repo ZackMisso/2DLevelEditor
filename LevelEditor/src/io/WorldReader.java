@@ -11,11 +11,18 @@ import data.GlobalSettings;
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.awt.Image;
+import java.io.File;
 public class WorldReader{
     private final GrandView reference;
+    private final File resources;
+    
+    public WorldReader(){ // constructor used for unit tests
+        this(null);
+    }
     
     public WorldReader(GrandView param){ // default constructor
         reference=param;
+        resources=new File("src/resources");
     }
     
     // reads the entire game save data from storage
@@ -26,7 +33,12 @@ public class WorldReader{
     // reads the names of the stored image files from storage
     public ArrayList<String> readImageNames(){
         ArrayList<String> names=new ArrayList<>();
-        // implement
+        if(resources.isDirectory()){
+            File[] images=resources.listFiles(new ImageFilter());
+            for(File file : images)
+                names.add(file.getName());
+        }else
+            System.out.println("Major Error :: WorldReader :: Cant Find Resources");
         return names;
     }
     

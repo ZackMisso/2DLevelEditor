@@ -1,0 +1,4 @@
+class :: line # :: what to do
+OptionView :: 140 :: simplify the refactorLocations method
+EntityStateView :: 291 :: remove getAddEntityStateObj dependency
+SavedEntityStateView :: 75 :: remove getRemoveEntityState dependency

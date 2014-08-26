@@ -18,10 +18,10 @@ import entities.SavedEntityState;
 import java.awt.Graphics;
 import java.util.ArrayList;
 public class GrandView extends View{
-    private ProgramThread thread;
-    private InputController inputs;
+    private final ProgramThread thread;
+    private final InputController inputs;
     private ArrayList<SavedEntityState> configs;
-    private LevelView level;
+    private LevelView level=new LevelView();
     private AreaView areas;
     private EntityStateView entityState;
     private GameEntityView gameEntity;
@@ -29,9 +29,9 @@ public class GrandView extends View{
     private SavedEntityStateView savedStates;
     private ModifiersView modifiers;
     private OptionView options;
-    private GlobalSettings settings;
-    private WorldReader reader;
-    private WorldWriter writer;
+    private final GlobalSettings settings;
+    private final WorldReader reader;
+    private final WorldWriter writer;
     
     // the default constructor
     public GrandView(ProgramThread param){

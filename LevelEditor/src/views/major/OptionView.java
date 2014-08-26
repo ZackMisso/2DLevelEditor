@@ -9,11 +9,7 @@ import views.MajorView;
 import views.TemporaryView;
 import views.minor.TextBox;
 import views.minor.RadialButton;
-import views.temporaries.AddEntityStateView;
-import views.temporaries.AddEntityStateObjectView;
-import views.temporaries.GlobalSettingsView;
-import views.temporaries.RemoveEntityStateView;
-import views.temporaries.RemoveEntityStateObjectView;
+import views.temporaries.*; // This class uses all temporary views so this is ok
 import java.awt.Graphics;
 import java.awt.Color;
 public class OptionView extends MajorView{
@@ -25,6 +21,7 @@ public class OptionView extends MajorView{
     private boolean addEntityState;
     private boolean removeEntityState;
     private boolean globalSettings;
+    private boolean selectImage;
     
     // default constructor
     public OptionView(){
@@ -36,6 +33,7 @@ public class OptionView extends MajorView{
         addEntityState=false;
         removeEntityState=false;
         globalSettings=false;
+        selectImage=false;
         setDisplayCnt(4);
         radialCols=1;
         setXpos(600);
@@ -59,6 +57,8 @@ public class OptionView extends MajorView{
             temporary=new RemoveEntityStateView();
         if(globalSettings)
             temporary=new GlobalSettingsView();
+        if(selectImage)
+            temporary=new SelectImageView();
         if(temporary!=null){
             temporary.setReference(this);
             temporary.initializeView();
@@ -80,6 +80,8 @@ public class OptionView extends MajorView{
         if(removeEntityState)
             temporary.acceptView();
         if(globalSettings)
+            temporary.acceptView();
+        if(selectImage)
             temporary.acceptView();
         getAccept().setSelected(false);
         // implement the rest as they are needed
@@ -135,6 +137,8 @@ public class OptionView extends MajorView{
         getScrollDown().setSelected(false);
     }
     
+    // TODO :: SIMPLIFY THIS
+    
     // updates the locations of the scrollables
     public void refactorViews(){
         int x=getXpos();
@@ -184,7 +188,6 @@ public class OptionView extends MajorView{
     public void paint(Graphics g){
         g.setColor(Color.pink);
         g.fillRect(getXpos(),getYpos(),getWidth(),getHeight());
-        //System.out.println("OMG");
         super.paint(g);
     }
     
@@ -194,7 +197,7 @@ public class OptionView extends MajorView{
     public int getRadialCols(){return radialCols;}
     public boolean getAddEntityStateObj(){return addEntityStateObj;}
     public boolean getRemoveEntityStateObj(){return removeEntityStateObj;}
-    public boolean getAddEntityState(){return addEntityState;}
+    public boolean getAddEntityState(){return addEntityState;} // these should not be needed
     public boolean getRemoveEntityState(){return removeEntityState;}
     public boolean getGlobalSettings(){return globalSettings;}
     
@@ -207,4 +210,5 @@ public class OptionView extends MajorView{
     public void setAddEntityState(boolean param){addEntityState=param;}
     public void setRemoveEntityState(boolean param){removeEntityState=param;}
     public void setGlobalSettings(boolean param){globalSettings=param;}
+    public void setSelectImage(boolean param){selectImage=param;}
 }

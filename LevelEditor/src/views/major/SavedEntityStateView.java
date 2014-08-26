@@ -72,6 +72,8 @@ public class SavedEntityStateView extends MajorView{
         getAccept().setSelected(false);
     }
     
+    // TODO :: remove getRemoveEntityState dependency
+    
     // handles when the remove button is selected
     public void remove(){
         OptionView temp=null;
