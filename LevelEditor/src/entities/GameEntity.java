@@ -60,10 +60,16 @@ public class GameEntity extends View{
     private void checkForGraphics(LevelView view){
         if(!state.getImages().isEmpty()){
             image=state.getImages().get(0).getValue();
+            //System.out.println(getWidth()+" :: OLD WIDTH");
+            setWidth(state.getImages().get(0).getValue().getWidth(null));
+            //System.out.println(getWidth()+" :: NEW WIDTH");
+            setHeight(state.getImages().get(0).getValue().getHeight(null));
         }else if(!state.getColors().isEmpty()){
             color=state.getColors().get(0).getValue();
         }else{
             image=view.getManGraphics().getMatch(state.getReference().getName());
+            setWidth(image.getWidth(null));
+            setHeight(image.getHeight(null));
             if(image!=null)
                 System.out.println("Image Found :: GameEntity");
         }

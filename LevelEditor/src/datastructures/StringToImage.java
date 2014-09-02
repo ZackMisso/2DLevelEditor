@@ -10,6 +10,8 @@ import java.awt.Image;
 public class StringToImage{
 	private String key;
 	private Image value;
+    //private int width;
+    //private int height;
 
     public StringToImage(){
     	// implement
@@ -17,6 +19,14 @@ public class StringToImage{
 
     public StringToImage(String str,Image img){
     	// implement
+    }
+    
+    public int getWidth(){
+        return value.getWidth(null);
+    }
+    
+    public int getHeight(){
+        return value.getHeight(null);
     }
 
     // getter methods
