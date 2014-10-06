@@ -74,6 +74,8 @@ public class LevelView extends View{
         g.fillRect(getXpos(), getYpos(), getWidth(), getHeight());
         g.setColor(Color.black);
         if(settings.getTiled()){
+            //System.out.println(settings.getTiled());
+            //System.out.println(GlobalSettings.tiled);
             for(int i=levelX;i<getWidth()+levelX;i++)
                 if(i%settings.getTileSize()==0)
                     g.drawLine(i-levelX,0,i-levelX,getHeight());
@@ -81,26 +83,26 @@ public class LevelView extends View{
                 if(i%settings.getTileSize()==0)
                     g.drawLine(0,i-levelY,getWidth(),i-levelY);
         }
-        if(!sorted)
-            sortByDepth();
+        //if(!sorted)
+        //    sortByDepth();
         super.paint(g);
     }
     
     // sorts the game entity list based on user defined depth
     // TODO :: NOT FINISHED, REWRITE AS A MERGE SORT
-    private void sortByDepth(){
-        for(int i=1;i<entities.size();i++){
-            int j=i;
-            int k=j-1;
-            while(entities.get(j).getDepth()<entities.get(k).getDepth()){
-                GameEntity temp=entities.get(j);
-                entities.set(j,entities.get(k));
-                entities.set(k,temp);
-                j--;
-                k--;
-            }
-        }
-    }
+    //private void sortByDepth(){
+    //    for(int i=1;i<entities.size();i++){
+    //        int j=i;
+    //        int k=j-1;
+    //        while(entities.get(j).getDepth()<entities.get(k).getDepth()){
+    //            GameEntity temp=entities.get(j);
+    //            entities.set(j,entities.get(k));
+    //            entities.set(k,temp);
+    //            j--;
+    //            k--;
+    //        }
+    //    }
+    //}
     
     // writes all of the entities to a string to write to the file
     public String writeLevel(){

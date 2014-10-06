@@ -71,6 +71,7 @@ public class GrandView extends View{
         // initialize GameEntityView
         System.out.println("Initializing the Game Entity View");
         gameEntity=new GameEntityView();
+        //gameEntity.setSettings(settings);
         gameEntity.setSuperview(this);
         getSubviews().add(gameEntity);
         // initialize LevelEntitiesView

@@ -5,6 +5,7 @@
  * 
  */
 package entities;
+import data.GlobalSettings;
 import data.LevelContainer;
 import entities.GameEntity;
 import datastructures.StringToDouble;
@@ -42,8 +43,14 @@ public class SavedEntityState{
     // creates the initial setup for the Saved Entity State
     public void createDefaultState(){
         if(ints.isEmpty()&&doubles.isEmpty()&&booleans.isEmpty()&&strings.isEmpty()){
-            ints.add("startX");
-            ints.add("startY");
+            if(GlobalSettings.tiled){
+                ints.add("tileX");
+                ints.add("tileY");
+                ints.add("block");
+            }else{
+                ints.add("startX");
+                ints.add("startY");
+            }
             //booleans.add("facingRight"); This is not needed for MARIO
         }else{
             System.out.println("Minor Error :: Already Initialized :: SavedEntityState");

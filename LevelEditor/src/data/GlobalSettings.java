@@ -6,9 +6,9 @@
  */
 package data;
 public class GlobalSettings {
-    private int tileSize; // the length of a side of a cell in px.
+    public static int tileSize; // the length of a side of a cell in px.
     private boolean grid; // if the level editor is displaying the grid
-    private boolean tiled; // if the game runs on tile physics (to be implemented)
+    public static boolean tiled; // if the game runs on tile physics (to be implemented)
     
     public GlobalSettings(){ // default constructor
         tileSize=0;

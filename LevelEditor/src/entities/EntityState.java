@@ -63,12 +63,20 @@ public class EntityState {
         // also idk how to implement entities yet
     }
     
-    // writes the state to a string for to be saved as a level file
     public String writeState(){
+        return writeState(null,null);
+    }
+
+    // writes the state to a string for to be saved as a level file
+    public String writeState(StringToInt startx,StringToInt starty){
         String data="";
         data+=reference.getName()+"\n";
         for(int i=0;i<bytes.size();i++)
             data+=bytes.get(i).getKey()+" "+bytes.get(i).getValue()+"\n";
+        if(startx!=null){ // If tile creation is set
+            data+=startx.getKey()+" "+startx.getValue()+"\n";
+            data+=starty.getKey()+" "+starty.getValue()+"\n";
+        }
         for(int i=0;i<ints.size();i++)
             data+=ints.get(i).getKey()+" "+ints.get(i).getValue()+"\n";
         for(int i=0;i<doubles.size();i++)

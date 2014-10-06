@@ -5,6 +5,7 @@
  * 
  */
 package entities;
+import data.GlobalSettings;
 import views.View;
 import views.major.LevelView;
 import views.major.GameEntityView;
@@ -35,6 +36,12 @@ public class GameEntity extends View{
         setHeight(16); // default for mario
         depth=-100;
         isNew=true;
+    }
+    
+    // This constructor is being used for a unit test
+    public GameEntity(int x,int y){
+        startX=x;
+        startY=y;
     }
     
     // handles when the game entity is clicked
@@ -82,8 +89,14 @@ public class GameEntity extends View{
             if(ints.get(i).getKey().equals("startX")){
                 startX=ints.get(i).getValue();
             }
+            if(ints.get(i).getKey().equals("tileX")){
+                startX=ints.get(i).getValue()*GlobalSettings.tileSize;
+            }
             if(ints.get(i).getKey().equals("startY")){
                 startY=ints.get(i).getValue();
+            }
+            if(ints.get(i).getKey().equals("tileY")){
+                startY=ints.get(i).getValue()*GlobalSettings.tileSize;
             }
         }
         // implement more if needed
@@ -91,7 +104,14 @@ public class GameEntity extends View{
     
     // returns the data that should be written to the level file
     public String writeData(){
-        String data=state.writeState();
+        String data;
+        if(!GlobalSettings.tiled)
+            data=state.writeState();
+        else{
+            StringToInt startx=new StringToInt("startX",startX);
+            StringToInt starty=new StringToInt("startY",startY);
+            data=state.writeState(startx,starty);
+        }
         return data+"\n";
     }
 
@@ -103,6 +123,30 @@ public class GameEntity extends View{
     // calculates the object's y position for the actual screen
     private int calculateY(LevelView view){
         return startY-view.getLevelY();
+    }
+    
+    // sets the location of the object to a multiple of the tileSize
+    public void roundPosition(int tileSize,LevelView view){
+        startX=(startX/tileSize)*tileSize;
+        startY=(startY/tileSize)*tileSize;
+    }
+    
+    // this is used by the tile system to tell if this object is a block
+    public boolean isBlock(){
+        ArrayList<StringToInt> ints=state.getInts();
+        for(int i=0;i<ints.size();i++)
+            if(ints.get(i).getKey().equals("block"))
+                return ints.get(i).getValue()!=0;
+        return false;
+    }
+    
+    // this is causing an error
+    public void changeLocationFromTile(int tileSize,LevelView view){
+        System.out.println("TileSize :: "+tileSize);
+        startX*=tileSize;
+        startY*=tileSize;
+        calculateX(view);
+        calculateY(view);
     }
 
     // the regular paint method

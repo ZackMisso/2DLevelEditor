@@ -1,0 +1,13 @@
+Text in the list of current objects does not update when you change the position
+
+Automatic selection does not work when you select something from the LevelView
+
+Scrolling does not work in the Level Entities View
+
+Clicks do not register well
+
+Change this from a runtime system to an event based system
+
+Load level files
+
+Load entity data files

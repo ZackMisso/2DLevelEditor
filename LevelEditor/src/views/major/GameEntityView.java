@@ -8,6 +8,7 @@ package views.major;
 import views.MajorView;
 import views.minor.NumberInput;
 import views.minor.TextBox;
+//import data.GlobalSettings;
 import datastructures.StringToInt;
 import datastructures.StringToString;
 import entities.GameEntity;
@@ -17,6 +18,7 @@ import java.awt.Graphics;
 import java.util.ArrayList;
 public class GameEntityView extends MajorView{
     private GameEntity current;
+    //private GlobalSettings settings;
     
     // default constructor
     public GameEntityView(){
@@ -192,7 +194,10 @@ public class GameEntityView extends MajorView{
                 if(getScrollables().get(f)instanceof NumberInput){
                     NumberInput input=(NumberInput)getScrollables().get(f);
                     if(input.getTitle().equals(data.getKey())){
-                        data.setValue(Integer.parseInt(input.getContents()));
+                        //if(input.getTitle().equals("tileX")||input.getTitle().equals("tileY"))
+                        //    data.setValue(Integer.parseInt(input.getContents())*settings.getTileSize());
+                        //else
+                            data.setValue(Integer.parseInt(input.getContents()));
                     }
                 }
             }
@@ -230,4 +235,5 @@ public class GameEntityView extends MajorView{
     
     // setter methods
     public void setCurrent(GameEntity param){current=param;}
+    //public void setSettings(GlobalSettings param){settings=param;}
 }
